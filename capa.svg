@@ -16,7 +16,6 @@
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="capa.svg"
-   inkscape:export-filename="/home/celso/capa.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -28,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.098943"
-     inkscape:cx="-225.8594"
-     inkscape:cy="155.61112"
+     inkscape:zoom="1.5031846"
+     inkscape:cx="82"
+     inkscape:cy="157.00001"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -63,7 +62,7 @@
      id="layer1"
      transform="translate(-55.987022,-78.887802)">
     <g
-       id="g1025">
+       id="g946">
       <rect
          style="opacity:1;fill:#414042;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.29875419;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
          id="rect966"
@@ -73,18 +72,18 @@
          y="78.887802"
          ry="0" />
       <g
-         id="g992">
+         id="g913">
         <text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:10.00000015%;font-family:Arial;-inkscape-font-specification:'Arial Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-           x="77.668724"
+           x="77.643555"
            y="159.56039"
            id="text909"><tspan
              sodipodi:role="line"
              id="tspan907"
-             x="77.668724"
+             x="77.643555"
              y="159.56039"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222223px;font-family:Nunito;-inkscape-font-specification:Nunito;fill:#ececec;stroke-width:0.26458332">Enhanced Front-end</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222223px;font-family:Nunito;-inkscape-font-specification:Nunito;fill:#ececec;stroke-width:0.26458332">Open-source SCADA</tspan></text>
         <g
            id="g995"
            transform="matrix(1.1262093,0,0,1.1262093,-9.2170821,-4.7839363)">

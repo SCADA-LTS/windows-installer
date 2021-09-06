@@ -16,7 +16,7 @@
 ================================================================================
 
 
-                     Apache Tomcat Version 9.0.50
+                     Apache Tomcat Version 9.0.52
                             Release Notes
 
 

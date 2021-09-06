@@ -1,6 +1,0 @@
-name=Bomba Simples On/Off (Media)
-type=imageSet
-#width=150
-#height=113
-text.x=14
-text.y=2

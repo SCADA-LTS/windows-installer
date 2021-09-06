@@ -1,10 +1,9 @@
-; Innacio - The ScadaBR-EF Windows installer
+; Innacio - The ScadaBR Windows installer
 
 #define MyAppName "ScadaBR"
-#define MyAppVersion "1.1"
+#define MyAppVersion "1.2"
 #define MyAppURL "http://www.scadabr.com.br/"
-;#define MyAppFolder "C:\users\celso\Área de Trabalho\innacio"
-#define MyAppFolder "C:\Users\Celso\Documents\Sistema\Scripts\innacio"
+#define MyAppFolder "C:\Users\Celso\Documents\Sistema\Scripts\ScadaBR12\innacio"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -13,8 +12,8 @@
 AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407A}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName=ScadaBR-EF, release 3
-AppComments=Open-source SCADA software
+AppVerName=ScadaBR 1.2
+AppComments=ScadaBR is a free and open-source SCADA software
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
@@ -43,7 +42,7 @@ Source: "tomcat32\*"; DestDir: "{app}\tomcat"; Flags: ignoreversion createallsub
 ; 64-bit Tomcat
 Source: "tomcat64\*"; DestDir: "{app}\tomcat"; Flags: ignoreversion createallsubdirs recursesubdirs; Check: Is64BitInstallMode
 ; ScadaBR WebApp
-Source: "ScadaBR\*"; DestDir: "{app}\tomcat\webapps\ScadaBR"; Flags: ignoreversion createallsubdirs recursesubdirs;
+Source: "ScadaBR.war"; DestDir: "{app}\tomcat\webapps"; Flags: ignoreversion;
 Source: "scadabr.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; Documentação
 Source: "ManualScadaBR.pdf"; DestDir: "{app}\docs"; Flags: ignoreversion
@@ -136,19 +135,20 @@ Filename: "{cmd}"; Parameters: "/c net start ScadaBR"; Description: {cm:Run_Scad
 Filename: "{app}\tomcat\bin\ScadaBR.exe"; Parameters: "//DS//ScadaBR"; Flags: runhidden; RunOnceId: "DelTomcatService"
 
 [UninstallDelete]
-Type: filesandordirs; Name: "{app}\tomcat\bin\scadabr_tomcat.exe"
-Type: filesandordirs; Name: "{app}\tomcat\bin\scadabr_tomcatw.exe"
+Type: filesandordirs; Name: "{app}\tomcat\bin\ScadaBR.exe"
+Type: filesandordirs; Name: "{app}\tomcat\bin\ScadaBRw.exe"
 Type: filesandordirs; Name: "{app}\tomcat\bin"
 Type: filesandordirs; Name: "{app}\tomcat\logs"
 Type: filesandordirs; Name: "{app}\tomcat\temp"
 
 [Messages]
-BeveledLabel=Innacio
+BeveledLabel=Innacio, the ScadaBR installer
 
 [Icons]
 Name: "{group}\Manual - Português"; Filename: "{app}\docs\ManualScadaBR.pdf"
 Name: "{group}\Manuel - Français"; Filename: "{app}\docs\ManuelScadaBR.pdf"
 Name: "{group}\ScadaBR"; Filename: "http://localhost:{code:GetInstallSettings|port}/ScadaBR"; IconFilename: "{app}\scadabr.ico"
+Name: "{group}\ScadaBR service manager"; Filename: "{app}\tomcat\bin\ScadaBRw.exe"
 
 [Code]
 var

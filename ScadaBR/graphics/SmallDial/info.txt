@@ -1,6 +1,0 @@
-name=Dial
-type=dynamic
-width=78
-height=78
-#text.x=0
-#text.y=100

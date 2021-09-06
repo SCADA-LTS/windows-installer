@@ -1,6 +1,0 @@
-name=Tanque 3D Verde enchendo/vazio
-type=imageSet
-#width=119
-#height=199
-text.x=5
-text.y=25

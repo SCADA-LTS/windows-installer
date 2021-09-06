@@ -1,6 +1,0 @@
-name=Filtro Manga Industrial on/off/fail
-type=imageSet
-#width=296
-#height=246
-text.x=14
-text.y=2
