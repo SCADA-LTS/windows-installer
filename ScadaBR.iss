@@ -23,7 +23,7 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadabr.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=ScadaBR Setup
+OutputBaseFilename=ScadaBR_Setup_Windows
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -70,6 +70,7 @@ brazilianportuguese.Java_Settings_Folder=Pasta:
 brazilianportuguese.Java_Settings_Invalid_JRE=O caminho especificado não é um JRE válido!
 brazilianportuguese.Installing_Service=Instalando serviço do Windows...
 brazilianportuguese.Configuring_Tomcat=Configurando Tomcat...
+brazilianportuguese.Changing_Folder_Permissions=Alterando permissões de pasta...
 brazilianportuguese.Run_ScadaBR_Now=Executar o ScadaBR agora
 brazilianportuguese.Delete_Config=Remover todos os arquivos do ScadaBR ? (Se você tem algo que criou que deseja manter, clique em Não)
 
@@ -91,6 +92,7 @@ spanish.Java_Settings_Folder=Carpeta:
 spanish.Java_Settings_Invalid_JRE=La ruta especificada no es un JRE válido!
 spanish.Installing_Service=Instalando servicio de Windows...
 spanish.Configuring_Tomcat=Configurando Tomcat...
+spanish.Changing_Folder_Permissions=Cambiando permisos de carpeta... 
 spanish.Run_ScadaBR_Now=Ejecutar ScadaBR ahora
 spanish.Delete_Config=Desea eliminar todos los archivos en el directorio de ScadaBR? (Si usted tiene algo haya creado y desea mantener, haga clic en No)
 
@@ -112,15 +114,15 @@ english.Java_Settings_Folder=Folder:
 english.Java_Settings_Invalid_JRE=The specified path is not a valid JRE!
 english.Installing_Service=Installing Windows service...
 english.Configuring_Tomcat=Configuring Tomcat...
+english.Changing_Folder_Permissions=Changing folder permissions...
 english.Run_ScadaBR_Now=Run ScadaBR now
 english.Delete_Config=Remove all files in your ScadaBR directory ? (If you have anything you created that you want to keep, click No)
 
 [Run]
 ; Criação do Serviço Windows
 Filename: "{cmd}"; Parameters: "/c ""{app}\tomcat\bin\service.bat"" install ScadaBR --rename"; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
+Filename: "{cmd}"; Parameters: "/c icacls ""{app}"" /grant *S-1-5-19:(OI)(CI)M /T"; Flags: runhidden; StatusMsg: "{cm:Changing_Folder_Permissions}"
 Filename: "{app}\tomcat\bin\ScadaBR.exe"; Parameters: "//US//ScadaBR --DisplayName ""ScadaBR - Apache Tomcat"" --Description ""ScadaBR service, powered by Apache Tomcat"" --Startup auto --Jvm ""{code:GetJVMDll|jre}"" --JvmOptions ""-Dfile.encoding=UTF-8;-Djavax.servlet.request.encoding=UTF-8;-Dcatalina.home={app}\tomcat;-Dcatalina.base={app}\tomcat;-Djava.io.tmpdir={app}\tomcat\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file={app}\tomcat\conf\logging.properties"""; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
-; Criação do Serviço Windows - Alterar permissões de pasta
-Filename: "{cmd}"; Parameters: "/c icacls ""{app}"" /grant *S-1-5-19:(OI)(CI)M /T"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 ; Alteração da porta HTTP
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\server.xml') | Foreach-Object {{$_ -replace '<tomcat-port>', '{code:GetInstallSettings|port}'} | Set-Content '{app}\tomcat\conf\server.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 ; Criação de usuários do tomcat-manager
@@ -149,6 +151,8 @@ Name: "{group}\Manual - Português"; Filename: "{app}\docs\ManualScadaBR.pdf"
 Name: "{group}\Manuel - Français"; Filename: "{app}\docs\ManuelScadaBR.pdf"
 Name: "{group}\ScadaBR"; Filename: "http://localhost:{code:GetInstallSettings|port}/ScadaBR"; IconFilename: "{app}\scadabr.ico"
 Name: "{group}\ScadaBR service manager"; Filename: "{app}\tomcat\bin\ScadaBRw.exe"
+Name: "{commondesktop}\ScadaBR"; Filename: "http://localhost:{code:GetInstallSettings|port}/ScadaBR"; IconFilename: "{app}\scadabr.ico"
+Name: "{commondesktop}\ScadaBR service manager"; Filename: "{app}\tomcat\bin\ScadaBRw.exe"
 
 [Code]
 var
@@ -179,6 +183,7 @@ begin
   if CurStep = ssInstall then
     Exec('powershell.exe', '-NoProfile -Command "exit"', '', SW_HIDE, ewNoWait, ResultCode);
 end;
+
 
 { Testar se deve ser criado um usuário para o Tomcat Manager }
 function ShouldCreateTomcatUser(): Boolean;
