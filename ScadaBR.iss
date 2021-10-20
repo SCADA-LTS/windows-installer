@@ -30,6 +30,7 @@ ArchitecturesInstallIn64BitMode=x64
 WizardImageFile=capa.bmp
 WizardSmallImageFile=logo.bmp
 DisableWelcomePage=False
+UninstallDisplayIcon={app}\scadabr.ico
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -48,6 +49,7 @@ Source: "scadabr.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "ManualScadaBR.pdf"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "ManuelScadaBR.pdf"; DestDir: "{app}\docs"; Flags: ignoreversion
 ; Arquivos para configuração do Tomcat
+Source: "install_scadabr.bat"; DestDir: "{app}\tomcat\bin"; Flags: ignoreversion
 Source: "server.xml"; DestDir: "{app}\tomcat\conf"; Flags: ignoreversion;
 Source: "tomcat-users.xml"; DestDir: "{app}\tomcat\conf"; Flags: ignoreversion; Check: ShouldCreateTomcatUser
 
@@ -120,9 +122,10 @@ english.Delete_Config=Remove all files in your ScadaBR directory ? (If you have 
 
 [Run]
 ; Criação do Serviço Windows
-Filename: "{cmd}"; Parameters: "/c ""{app}\tomcat\bin\service.bat"" install ScadaBR --rename"; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
-Filename: "{cmd}"; Parameters: "/c icacls ""{app}"" /grant *S-1-5-19:(OI)(CI)M /T"; Flags: runhidden; StatusMsg: "{cm:Changing_Folder_Permissions}"
+Filename: "{cmd}"; Parameters: "/c install_scadabr.bat install ScadaBR --rename && timeout /t 2"; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 Filename: "{app}\tomcat\bin\ScadaBR.exe"; Parameters: "//US//ScadaBR --DisplayName ""ScadaBR - Apache Tomcat"" --Description ""ScadaBR service, powered by Apache Tomcat"" --Startup auto --Jvm ""{code:GetJVMDll|jre}"" --JvmOptions ""-Dfile.encoding=UTF-8;-Djavax.servlet.request.encoding=UTF-8;-Dcatalina.home={app}\tomcat;-Dcatalina.base={app}\tomcat;-Djava.io.tmpdir={app}\tomcat\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file={app}\tomcat\conf\logging.properties"""; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
+; Alterar permissões de pasta
+Filename: "{cmd}"; Parameters: "/c icacls ""{app}"" /grant *S-1-5-19:(OI)(CI)M /T"; Flags: runhidden; StatusMsg: "{cm:Changing_Folder_Permissions}"
 ; Alteração da porta HTTP
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\server.xml') | Foreach-Object {{$_ -replace '<tomcat-port>', '{code:GetInstallSettings|port}'} | Set-Content '{app}\tomcat\conf\server.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 ; Criação de usuários do tomcat-manager
@@ -144,7 +147,7 @@ Type: filesandordirs; Name: "{app}\tomcat\logs"
 Type: filesandordirs; Name: "{app}\tomcat\temp"
 
 [Messages]
-BeveledLabel=Innacio, the ScadaBR installer
+BeveledLabel=www.scadabr.com.br
 
 [Icons]
 Name: "{group}\Manual - Português"; Filename: "{app}\docs\ManualScadaBR.pdf"
