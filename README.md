@@ -1,8 +1,8 @@
 # Innacio
-Innacio é um instalador para o ScadaBR desenvolvido com o Inno Setup.
+Innacio é um instalador para o Scada-LTS desenvolvido com o Inno Setup.
 
-Se você está procurando pelo arquivo `.exe` do instalador do ScadaBR, consulte os [lançamentos no repositório do ScadaBR](https://github.com/ScadaBR/ScadaBR/releases/latest/).
+Se você está procurando pelo arquivo `.exe` do instalador do Scada-LTS, consulte os [lançamentos no repositório do Scada-LTS](https://github.com/SCADA-LTS/Scada-LTS/releases/latest).
 
-O script principal do instalador (`ScadaBR.iss`) pode ser modificado e adaptado nos termos da licença MIT. Os outros arquivos deste repositório (Tomcat, Builds do ScadaBR, etc) possuem licenças diferentes.
+O script principal do instalador (`Scada-LTS.iss`) pode ser modificado e adaptado nos termos da licença MIT. Os outros arquivos deste repositório (Tomcat, Builds do Scada-LTS, etc) possuem licenças diferentes.
 
-Sinta-se livre para fazer um _fork_ deste repositório e criar instaladores para suas próprias versões do ScadaBR.
+Sinta-se livre para fazer um _fork_ deste repositório e criar instaladores para suas próprias versões do Scada-LTS.
