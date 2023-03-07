@@ -1,8 +1,8 @@
-# Innacio
-Innacio é um instalador para o Scada-LTS desenvolvido com o Inno Setup.
+# Scada-LTS
+Installer for Scada-LTS developed with Inno Setup.
 
-Se você está procurando pelo arquivo `.exe` do instalador do Scada-LTS, consulte os [lançamentos no repositório do Scada-LTS](https://github.com/SCADA-LTS/Scada-LTS/releases/latest).
+If you are looking for the Scada-LTS installer `.exe` file, see the [Scada-LTS repository releases](https://github.com/SCADA-LTS/Scada-LTS/releases/latest).
 
-O script principal do instalador (`Scada-LTS.iss`) pode ser modificado e adaptado nos termos da licença MIT. Os outros arquivos deste repositório (Tomcat, Builds do Scada-LTS, etc) possuem licenças diferentes.
+The main installer script (`Scada-LTS.iss`) may be modified and adapted under the terms of the MIT license. The other files in this repository (Tomcat, Scada-LTS Builds, etc) have different licenses.
 
-Sinta-se livre para fazer um _fork_ deste repositório e criar instaladores para suas próprias versões do Scada-LTS.
+Feel free to _fork_ this repository and create installers for your own versions of Scada-LTS.
