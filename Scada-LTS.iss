@@ -1,9 +1,9 @@
 ; Innacio - The Scada-LTS Windows installer
 
 #define MyAppName "Scada-LTS"
-#define MyAppVersion "2.6.18"
+#define MyAppVersion "2.7.5.1"
 #define MyAppURL "http://scada-lts.com/"
-#define MyAppFolder "C:/Users/Kamil Jarmusik/IdeaProjects/windows-installer-2/"
+#define MyAppFolder "/"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -12,7 +12,7 @@
 AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407A}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName=Scada-LTS v2.6.18
+AppVerName=Scada-LTS v2.7.5.1
 AppComments=Scada-LTS is a free and open-source SCADA software
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisherURL={#MyAppURL}
@@ -23,7 +23,7 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadalts.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=ScadaLTS_Setup_Windows
+OutputBaseFilename=ScadaLTS_v2.7.5.1_Beta_Setup
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -45,60 +45,60 @@ Source: "tomcat64\*"; DestDir: "{app}\tomcat"; Flags: ignoreversion createallsub
 ; Scada-LTS WebApp
 Source: "Scada-LTS.war"; DestDir: "{app}\tomcat\webapps"; Flags: ignoreversion;
 Source: "scadalts.ico"; DestDir: "{app}"; Flags: ignoreversion
-; Documentação
+; Documentaï¿½ï¿½o
 Source: "ManualScadaBR.pdf"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "ManuelScadaBR.pdf"; DestDir: "{app}\docs"; Flags: ignoreversion
-; Arquivos para configuração do Tomcat
+; Arquivos para configuraï¿½ï¿½o do Tomcat
 Source: "install_scadalts.bat"; DestDir: "{app}\tomcat\bin"; Flags: ignoreversion
 Source: "server.xml"; DestDir: "{app}\tomcat\conf"; Flags: ignoreversion;
 Source: "tomcat-users.xml"; DestDir: "{app}\tomcat\conf"; Flags: ignoreversion; Check: ShouldCreateTomcatUser
 
 [CustomMessages]
-; Tradução em português
+; Traduï¿½ï¿½o em portuguï¿½s
 brazilianportuguese.Tomcat_Settings_Label_Port_Caption0=Porta HTTP do Tomcat:
-brazilianportuguese.Tomcat_Settings_Label_TomcatUser_Caption0=Criar usuário para o Tomcat Manager (opcional):
-brazilianportuguese.Tomcat_Settings_Label_Username_Caption0=Nome de Usuário:
+brazilianportuguese.Tomcat_Settings_Label_TomcatUser_Caption0=Criar usuï¿½rio para o Tomcat Manager (opcional):
+brazilianportuguese.Tomcat_Settings_Label_Username_Caption0=Nome de Usuï¿½rio:
 brazilianportuguese.Tomcat_Settings_Label_Password_Caption0=Senha:
-brazilianportuguese.Tomcat_Settings_Label_TomcatSettings_Caption0=Utilize os campos abaixo para alterar as configurações do Apache Tomcat.
+brazilianportuguese.Tomcat_Settings_Label_TomcatSettings_Caption0=Utilize os campos abaixo para alterar as configuraï¿½ï¿½es do Apache Tomcat.
 brazilianportuguese.Tomcat_Settings_Edit_Port_Text0=8080
-brazilianportuguese.Tomcat_Settings_Caption=Configurações do Tomcat
+brazilianportuguese.Tomcat_Settings_Caption=Configuraï¿½ï¿½es do Tomcat
 brazilianportuguese.Tomcat_Settings_Description=Configurar o Apache Tomcat utilizado no Scada-LTS
-brazilianportuguese.Tomcat_Settings_Invalid_Port=Porta HTTP inválida!
-brazilianportuguese.Tomcat_Settings_User_Fields_Missing=O campo "Nome de usuário" ou "Senha" está vazio!
-brazilianportuguese.Java_Settings_Caption=Configurações da Máquina Virtual Java
-brazilianportuguese.Java_Settings_Description=Configurar a Máquina Virtual Java utilizada no Scada-LTS
-brazilianportuguese.Java_Settings_Select_JRE=Por favor selecione o caminho do JRE 8 instalado no seu sistema. Note que se você possuir sistema operacional 64-bit, você deve especificar um caminho JRE 64-bit válido:
+brazilianportuguese.Tomcat_Settings_Invalid_Port=Porta HTTP invï¿½lida!
+brazilianportuguese.Tomcat_Settings_User_Fields_Missing=O campo "Nome de usuï¿½rio" ou "Senha" estï¿½ vazio!
+brazilianportuguese.Java_Settings_Caption=Configuraï¿½ï¿½es da Mï¿½quina Virtual Java
+brazilianportuguese.Java_Settings_Description=Configurar a Mï¿½quina Virtual Java utilizada no Scada-LTS
+brazilianportuguese.Java_Settings_Select_JRE=Por favor selecione o caminho do JRE 8 instalado no seu sistema. Note que se vocï¿½ possuir sistema operacional 64-bit, vocï¿½ deve especificar um caminho JRE 64-bit vï¿½lido:
 brazilianportuguese.Java_Settings_Folder=Pasta:
-brazilianportuguese.Java_Settings_Invalid_JRE=O caminho especificado não é um JRE válido!
-brazilianportuguese.Installing_Service=Instalando serviço do Windows...
+brazilianportuguese.Java_Settings_Invalid_JRE=O caminho especificado nï¿½o ï¿½ um JRE vï¿½lido!
+brazilianportuguese.Installing_Service=Instalando serviï¿½o do Windows...
 brazilianportuguese.Configuring_Tomcat=Configurando Tomcat...
-brazilianportuguese.Changing_Folder_Permissions=Alterando permissões de pasta...
+brazilianportuguese.Changing_Folder_Permissions=Alterando permissï¿½es de pasta...
 brazilianportuguese.Run_ScadaLTS_Now=Executar o Scada-LTS agora
-brazilianportuguese.Delete_Config=Remover todos os arquivos do Scada-LTS ? (Se você tem algo que criou que deseja manter, clique em Não)
+brazilianportuguese.Delete_Config=Remover todos os arquivos do Scada-LTS ? (Se vocï¿½ tem algo que criou que deseja manter, clique em Nï¿½o)
 
-; Tradução em espanhol
+; Traduï¿½ï¿½o em espanhol
 spanish.Tomcat_Settings_Label_Port_Caption0=Puerto HTTP de Tomcat:
 spanish.Tomcat_Settings_Label_TomcatUser_Caption0=Crear usuario para Tomcat Manager (opcional):
 spanish.Tomcat_Settings_Label_Username_Caption0=Nombre de Usuario:
-spanish.Tomcat_Settings_Label_Password_Caption0=Contraseña:
+spanish.Tomcat_Settings_Label_Password_Caption0=Contraseï¿½a:
 spanish.Tomcat_Settings_Label_TomcatSettings_Caption0=Utilice los campos abajo para cambiar las configuraciones de Apache Tomcat.
 spanish.Tomcat_Settings_Edit_Port_Text0=8080
 spanish.Tomcat_Settings_Caption=Configuraciones de Tomcat
 spanish.Tomcat_Settings_Description=Configurar Apache Tomcat utilizado en Scada-LTS
-spanish.Tomcat_Settings_Invalid_Port=Puerto HTTP inválido!
-spanish.Tomcat_Settings_User_Fields_Missing=El campo "Nombre de usuario" o "Contraseña" está vacío!
-spanish.Java_Settings_Caption=Configuraciones de la Máquina Virtual Java
-spanish.Java_Settings_Description=Configurar la Máquina Virtual Java utilizada en Scada-LTS
-spanish.Java_Settings_Select_JRE=Por favor, seleccione la ruta del JRE 8 instalado en su sistema. Note que si usted posee sistema operacional 64-bit, debe especificar la ruta de un JRE 64-bit válido:
+spanish.Tomcat_Settings_Invalid_Port=Puerto HTTP invï¿½lido!
+spanish.Tomcat_Settings_User_Fields_Missing=El campo "Nombre de usuario" o "Contraseï¿½a" estï¿½ vacï¿½o!
+spanish.Java_Settings_Caption=Configuraciones de la Mï¿½quina Virtual Java
+spanish.Java_Settings_Description=Configurar la Mï¿½quina Virtual Java utilizada en Scada-LTS
+spanish.Java_Settings_Select_JRE=Por favor, seleccione la ruta del JRE 8 instalado en su sistema. Note que si usted posee sistema operacional 64-bit, debe especificar la ruta de un JRE 64-bit vï¿½lido:
 spanish.Java_Settings_Folder=Carpeta:
-spanish.Java_Settings_Invalid_JRE=La ruta especificada no es un JRE válido!
+spanish.Java_Settings_Invalid_JRE=La ruta especificada no es un JRE vï¿½lido!
 spanish.Installing_Service=Instalando servicio de Windows...
 spanish.Configuring_Tomcat=Configurando Tomcat...
 spanish.Changing_Folder_Permissions=Cambiando permisos de carpeta... 
 spanish.Run_ScadaLTS_Now=Ejecutar Scada-LTS ahora
 spanish.Delete_Config=Desea eliminar todos los archivos en el directorio de Scada-LTS? (Si usted tiene algo haya creado y desea mantener, haga clic en No)
 
-; Tradução em inglês
+; Traduï¿½ï¿½o em inglï¿½s
 english.Tomcat_Settings_Label_Port_Caption0=Tomcat HTTP Port:
 english.Tomcat_Settings_Label_TomcatUser_Caption0=Create user for Tomcat Manager (optional):
 english.Tomcat_Settings_Label_Username_Caption0=Username:
@@ -121,22 +121,22 @@ english.Run_ScadaLTS_Now=Run Scada-LTS now
 english.Delete_Config=Remove all files in your Scada-LTS directory ? (If you have anything you created that you want to keep, click No)
 
 [Run]
-; Criação do Serviço Windows
+; Criaï¿½ï¿½o do Serviï¿½o Windows
 Filename: "{cmd}"; Parameters: "/c install_scadalts.bat install Scada-LTS --rename && timeout /t 2"; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "//US//Scada-LTS --DisplayName ""Scada-LTS - Apache Tomcat"" --Description ""Scada-LTS service, powered by Apache Tomcat"" --Startup auto --Jvm ""{code:GetJVMDll|jre}"" --JvmOptions ""-Dfile.encoding=UTF-8;-Djavax.servlet.request.encoding=UTF-8;-Dcatalina.home={app}\tomcat;-Dcatalina.base={app}\tomcat;-Djava.io.tmpdir={app}\tomcat\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file={app}\tomcat\conf\logging.properties"""; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
-; Alterar permissões de pasta
+; Alterar permissï¿½es de pasta
 Filename: "{cmd}"; Parameters: "/c icacls ""{app}"" /grant *S-1-5-19:(OI)(CI)M /T"; Flags: runhidden; StatusMsg: "{cm:Changing_Folder_Permissions}"
-; Alteração da porta HTTP
+; Alteraï¿½ï¿½o da porta HTTP
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\server.xml') | Foreach-Object {{$_ -replace '<tomcat-port>', '{code:GetInstallSettings|port}'} | Set-Content '{app}\tomcat\conf\server.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
-; Criação de usuários do tomcat-manager
+; Criaï¿½ï¿½o de usuï¿½rios do tomcat-manager
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\tomcat-users.xml') | Foreach-Object {{$_ -replace '<user-name>', '{code:GetInstallSettings|username}'} | Set-Content '{app}\tomcat\conf\tomcat-users.xml'"" "; Check: ShouldCreateTomcatUser; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}" 
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\tomcat-users.xml') | Foreach-Object {{$_ -replace '<user-password>', '{code:GetInstallSettings|password}'} | Set-Content '{app}\tomcat\conf\tomcat-users.xml'"" ";  Check: ShouldCreateTomcatUser; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
-; Iniciar serviço do Scada-LTS
+; Iniciar serviï¿½o do Scada-LTS
 ;Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "start"; Flags: postinstall runascurrentuser runhidden nowait;
 Filename: "{cmd}"; Parameters: "/c net start Scada-LTS"; Description: {cm:Run_ScadaLTS_Now}; Flags: postinstall runascurrentuser runhidden nowait;
 
 [UninstallRun]
-; Remoção do Serviço Windows
+; Remoï¿½ï¿½o do Serviï¿½o Windows
 Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "//DS//Scada-LTS"; Flags: runhidden; RunOnceId: "DelTomcatService"
 
 [UninstallDelete]
@@ -150,8 +150,8 @@ Type: filesandordirs; Name: "{app}\tomcat\temp"
 BeveledLabel=www.scada-lts.com
 
 [Icons]
-Name: "{group}\Manual - Português"; Filename: "{app}\docs\ManualScadaBR.pdf"
-Name: "{group}\Manuel - Français"; Filename: "{app}\docs\ManuelScadaBR.pdf"
+Name: "{group}\Manual - Portuguï¿½s"; Filename: "{app}\docs\ManualScadaBR.pdf"
+Name: "{group}\Manuel - Franï¿½ais"; Filename: "{app}\docs\ManuelScadaBR.pdf"
 Name: "{group}\Scada-LTS"; Filename: "http://localhost:{code:GetInstallSettings|port}/Scada-LTS"; IconFilename: "{app}\scadalts.ico"
 Name: "{group}\Scada-LTS service manager"; Filename: "{app}\tomcat\bin\Scada-LTSw.exe"
 Name: "{commondesktop}\Scada-LTS"; Filename: "http://localhost:{code:GetInstallSettings|port}/Scada-LTS"; IconFilename: "{app}\scadalts.ico"
@@ -159,7 +159,7 @@ Name: "{commondesktop}\Scada-LTS service manager"; Filename: "{app}\tomcat\bin\S
 
 [Code]
 var
-  // Controles de formulário
+  // Controles de formulï¿½rio
   Label_Port: TLabel;
   Label_TomcatUser: TLabel;
   Label_Username: TLabel;
@@ -168,10 +168,10 @@ var
   Edit_Port: TEdit;
   Edit_Username: TEdit;
   Edit_Password: TEdit;
-  // Variáveis para acessar conteúdo das páginas criadas
+  // Variï¿½veis para acessar conteï¿½do das pï¿½ginas criadas
   Java_Settings_PageID: Integer;
   Java_Settings_Page: TInputDirWizardPage;
-  // Variáveis para armazenar os dados inseridos
+  // Variï¿½veis para armazenar os dados inseridos
   JRE_Path : String;
   Tomcat_Port : String;
   Tomcat_Username: String;
@@ -188,7 +188,7 @@ begin
 end;
 
 
-{ Testar se deve ser criado um usuário para o Tomcat Manager }
+{ Testar se deve ser criado um usuï¿½rio para o Tomcat Manager }
 function ShouldCreateTomcatUser(): Boolean;
 begin
   Result := False;
@@ -196,7 +196,7 @@ begin
     Result := True;
 end;
 
-{ Remover configurações do usuário, com confirmação }
+{ Remover configuraï¿½ï¿½es do usuï¿½rio, com confirmaï¿½ï¿½o }
 procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
 begin
   if CurUninstallStep = usPostUninstall then
@@ -206,7 +206,7 @@ begin
   end;
 end;
 
-{ Recuperar os dados informados pelo usuário }
+{ Recuperar os dados informados pelo usuï¿½rio }
 function GetInstallSettings(AParam: String): String;
 begin
   if AParam = 'port' then
@@ -233,7 +233,7 @@ begin
   Result := DllPath;
 end;
 
-{ Esta função é usada na validação dos dados da página de configuração do Java }
+{ Esta funï¿½ï¿½o ï¿½ usada na validaï¿½ï¿½o dos dados da pï¿½gina de configuraï¿½ï¿½o do Java }
 function NextButtonClick(CurPageID: Integer): Boolean;
 begin
   Result := True;
@@ -249,7 +249,7 @@ begin
   end;
 end;
 
-{ Criação da página de configuração do Java }
+{ Criaï¿½ï¿½o da pï¿½gina de configuraï¿½ï¿½o do Java }
 function Java_Settings_CreatePage(PreviousPageId: Integer): Integer;
 var
   Page: TInputDirWizardPage;
@@ -268,7 +268,7 @@ begin
   Result := Page.ID;
 end;
 
-{ Esta função valida os dados na página de configuração do Tomcat }
+{ Esta funï¿½ï¿½o valida os dados na pï¿½gina de configuraï¿½ï¿½o do Tomcat }
 function Tomcat_Settings_NextButtonClick(Page: TWizardPage): Boolean;
 var
   Port: Longint;
@@ -289,7 +289,7 @@ begin
   end;
 end;
 
-{ Criação da página de configuração do Tomcat }
+{ Criaï¿½ï¿½o da pï¿½gina de configuraï¿½ï¿½o do Tomcat }
 function Tomcat_Settings_CreatePage(PreviousPageId: Integer): Integer;
 var
   Page: TWizardPage;
@@ -300,7 +300,7 @@ begin
     ExpandConstant('{cm:Tomcat_Settings_Description}')
   );
 
-  { Criação das entradas de formulário da página }
+  { Criaï¿½ï¿½o das entradas de formulï¿½rio da pï¿½gina }
   // Label_TomcatSettings
   Label_TomcatSettings := TLabel.Create(Page);
   with Label_TomcatSettings do
@@ -413,7 +413,7 @@ begin
   Result := Page.ID;
 end;
 
-{ Este procedimento é chamado ao iniciar o Inno Setup }
+{ Este procedimento ï¿½ chamado ao iniciar o Inno Setup }
 procedure InitializeWizard();
 var
   AfterID: Integer;
