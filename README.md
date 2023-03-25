@@ -9,21 +9,23 @@ The main installer script (`Scada-LTS.iss`) may be modified and adapted under th
 Feel free to _fork_ this repository and create installers for your own versions of Scada-LTS.
 
 # Table of Contents
-- [Tools Installation]()
-  - [Java]()
-  - [MySQL]()
-  - [Tomcat]()
-- [Scada-LTS start]()
+1. [Required installation before running the installer]()
+* 1.1 [Java]()
+* 1.2 [Server MySQL]()
+* 1.3 [Client MySQL - Dbeaver]()
+2. [Run installer]()
+3. [Config Tomcat after running the installer]()
 
-# Current technology stack table:
+# 1. Required installation before running the installer:
 | Technology | Version | Description |
 | :--- | :---: | --- |
 | Java | 11 | Base programic language |
 | MySQL | 5.7/8.0 | Database server for data persistence |
+| Dbeaver | 23.0.0 | Database client |
 
-## Java
+## 1.1 Java
 &nbsp;&nbsp;&nbsp;&nbsp;The base project is written in Java. So to start development a new features to Scada-LTS you need to install Java Development Kit (JDK). You can do that easily by downloading the valid version from the [jdk.java.net](https://jdk.java.net/java-se-ri/11) website. Then you only need to extract that file and set-up the PATH variable to */bin* directory.
-### Windows
+
 - For windows download version from [openjdk-11+28_windows-x64_bin.zip](https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip)
 - Extract that file in location where you want to keep your Java binaries  
   *(for example C:\services\java\jdk-11)*  
@@ -31,20 +33,43 @@ Feel free to _fork_ this repository and create installers for your own versions 
   *(for example C:\services\java\jdk-11\bin)*  
 - Verify that Java is installed correctly, open your terminal and type `java -version`
 
-## MySQL
+## 1.2. Server MySQL
 &nbsp;&nbsp;&nbsp;&nbsp;MySQL must be matching the provided version. If not there will be a problem with establishing the connection from the Scada-LTS application.
-### Windows 
+
  - Use dedicated [installer](https://dev.mysql.com/downloads/file/?id=471660)
  - Configure default password to "rootroot" user: "root". 
- - Create a new database with name: "scadalts".
+
+## 1.3. Client MySQL - Dbeaver
+
+ 1. Download [dbeaver-ce-latest-x86_64-setup.exe](https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe) and install;
+ 2. Run dbeaver, and click on 'New Database Connection':
+
+ ![Screenshot 2023-03-25 at 20 52 40](https://user-images.githubusercontent.com/35842300/227738616-855f704c-d034-48e9-8372-2a2a88a116b7.png)
  
-## Tomcat 
-- Default path:
-`C:\Program Files\Scada-LTS\tomcat\conf\context.xml`
-- Change password on "rootroot":
+ 3. Select MySQL and click 'Next':
+ 
+ ![Screenshot 2023-03-25 at 20 55 03](https://user-images.githubusercontent.com/35842300/227738741-895120c7-9c71-4c53-bd29-bb8184afe8e8.png)
+ 
+ 4. Set Password rootroot and click on 'Finish':
+ 
+ ![Screenshot 2023-03-25 at 20 56 49](https://user-images.githubusercontent.com/35842300/227738802-b92ef2ca-e818-496b-a03e-e3ec98d6cf07.png)
+
+ 5. Click on 'Create New Database':
+
+ ![Screenshot 2023-03-25 at 20 59 13](https://user-images.githubusercontent.com/35842300/227738880-3d04faca-546a-4c96-967e-7fc276233db2.png)
+
+ 6. Set name "scadalts" and click 'ok':
+ 
+ ![Screenshot 2023-03-25 at 21 00 03](https://user-images.githubusercontent.com/35842300/227738907-3e0a61fc-d0bb-47ee-bddc-e4a30b7e2741.png)
+
+## 2. Run installer
+Download [ScadaLTS_v2.6.18_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.2/ScadaLTS_v2.6.18_Setup.exe) and run;
+
+## 3. Config Tomcat after running the installer 
+1. Tomcat stopped;
+2. Change password on "rootroot" in file context.xml, default path: 
+`C:\Program Files\Scada-LTS\tomcat\conf\context.xml` :
 ![Screenshot 2023-03-25 at 19 46 29|320](https://user-images.githubusercontent.com/35842300/227735742-57ab537a-5d9c-4d85-887b-66fc0ac7d789.png)
-
-## Start
-- I started tomcat and it worked perfectly in the url:
-
+3. Started tomcat and it worked perfectly in the url:
 `http://localhost:8080/Scada-LTS`
+
