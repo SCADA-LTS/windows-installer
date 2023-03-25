@@ -24,7 +24,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
 ## Java
 &nbsp;&nbsp;&nbsp;&nbsp;The base project is written in Java. So to start development a new features to Scada-LTS you need to install Java Development Kit (JDK). You can do that easily by downloading the valid version from the [jdk.java.net](https://jdk.java.net/java-se-ri/11) website. Then you only need to extract that file and set-up the PATH variable to */bin* directory.
 ### Windows
-- For windows download dedicated Windowsx64.zip version.  
+- For windows download version from https://www.openlogic.com/openjdk-downloads  
 - Extract that file in location where you want to keep your Java binaries  
   *(for example C:\services\java\jdk-11)*  
 - Set-up the PATH environment variable to bin directory of your installation location  
