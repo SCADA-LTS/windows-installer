@@ -9,14 +9,14 @@ The main installer script (`Scada-LTS.iss`) may be modified and adapted under th
 Feel free to _fork_ this repository and create installers for your own versions of Scada-LTS.
 
 # Table of Contents
-1. [Required installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-required-installation-before-running-the-installer)
+1. [Required installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-required-installation-before-running-the-installer---up)
 * 1.1 [Java](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#11-java---up)
 * 1.2 [Server MySQL](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-server-mysql---up)
 * 1.3 [Client MySQL - Dbeaver](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#13-client-mysql---dbeaver---up)
 2. [Run installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer---up)
 3. [Config Tomcat after running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#3-config-tomcat-after-running-the-installer---up)
 
-# 1. Required installation before running the installer:
+# 1. Required installation before running the installer - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-contents)
 | Technology | Version | Description |
 | :--- | :---: | --- |
 | Java | 11 | Base programic language |
