@@ -13,13 +13,13 @@ Feel free to _fork_ this repository and create installers for your own versions 
   - [Java]()
   - [MySQL]()
   - [Tomcat]()
-- [Scada-LTS project initialization]()
+- [Scada-LTS start]()
 
 # Current technology stack table:
 | Technology | Version | Description |
 | :--- | :---: | --- |
 | Java | 11 | Base programic language |
-| MySQL | 5.7/8.0 | Database server for data persistence |
+| MySQL | 5.7 | Database server for data persistence |
 
 ## Java
 &nbsp;&nbsp;&nbsp;&nbsp;The base project is written in Java. So to start development a new features to Scada-LTS you need to install Java Development Kit (JDK). You can do that easily by downloading the valid version from the [jdk.java.net](https://jdk.java.net/java-se-ri/11) website. Then you only need to extract that file and set-up the PATH variable to */bin* directory.
@@ -38,4 +38,11 @@ Feel free to _fork_ this repository and create installers for your own versions 
  - Configure default password to "rootroot" user: "root". 
  - Create a new database with name: "scadalts".
  
- 
+## Tomcat 
+- Default path: C:\Program Files\Scada-LTS\tomcat\conf\context.xml 
+- Change password on "rootroot":
+![Screenshot 2023-03-25 at 19 46 29](https://user-images.githubusercontent.com/35842300/227735742-57ab537a-5d9c-4d85-887b-66fc0ac7d789.png)
+
+## Start
+- I started tomcat and it worked perfectly in the url:
+http://localhost:8080/Scada-LTS
