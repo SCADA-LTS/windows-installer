@@ -12,7 +12,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
 1. [Installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-installation-before-running-the-installer---up)
 * 1.1 [Java (Required)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#11-java-required---up)
 * 1.2 [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-client-mysql---dbeaver-optional---up)
-2. [Run installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer---up)
+2. [Run installer v1.0.4](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer-v104---up)
 
 # 1. Installation before running the installer - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
 | Technology | Version | Description |
@@ -45,7 +45,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
  
  ![Screenshot 2023-03-25 at 20 56 49](https://user-images.githubusercontent.com/35842300/227738802-b92ef2ca-e818-496b-a03e-e3ec98d6cf07.png)
 
-## 2. Run installer - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
+## 2. Run installer v1.0.4 - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
 Download [ScadaLTS_v2.6.18_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.4/ScadaLTS_v2.6.18_Standalone_Setup.exe) and run;
 
 # Old version <= v1.0.3 - Table of content
