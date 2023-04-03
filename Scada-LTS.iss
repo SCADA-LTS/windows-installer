@@ -4,6 +4,7 @@
 #define MyAppVersion "2.7.5.2"
 #define MyAppURL "http://scada-lts.com/"
 #define MyAppFolder "/"
+#define MySQLSeverName "MySQL Server CE 8.0"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -23,7 +24,7 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadalts.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=ScadaLTS_v2.7.5.2_Beta_Setup
+OutputBaseFilename=ScadaLTS_v2.7.5.2_Beta_Standalone_Setup
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -52,6 +53,9 @@ Source: "ManuelScadaBR.pdf"; DestDir: "{app}\docs"; Flags: ignoreversion
 Source: "install_scadalts.bat"; DestDir: "{app}\tomcat\bin"; Flags: ignoreversion
 Source: "server.xml"; DestDir: "{app}\tomcat\conf"; Flags: ignoreversion;
 Source: "tomcat-users.xml"; DestDir: "{app}\tomcat\conf"; Flags: ignoreversion; Check: ShouldCreateTomcatUser
+; 64-bit MySQL Community Edition 8.0.32
+Source: "mysql\*"; DestDir: "{app}\mysql"; Flags: ignoreversion createallsubdirs recursesubdirs; Check: Is64BitInstallMode
+Source: "install_mysql.bat"; DestDir: "{app}\mysql\bin"; Flags: ignoreversion
 
 [CustomMessages]
 ; Tradução em português
@@ -75,6 +79,7 @@ brazilianportuguese.Configuring_Tomcat=Configurando Tomcat...
 brazilianportuguese.Changing_Folder_Permissions=Alterando permissões de pasta...
 brazilianportuguese.Run_ScadaLTS_Now=Executar o Scada-LTS agora
 brazilianportuguese.Delete_Config=Remover todos os arquivos do Scada-LTS ? (Se você tem algo que criou que deseja manter, clique em Não)
+brazilianportuguese.Run_MySQL_Now=Executar o {#MySQLSeverName} agora
 
 ; Tradução em espanhol
 spanish.Tomcat_Settings_Label_Port_Caption0=Puerto HTTP de Tomcat:
@@ -97,6 +102,7 @@ spanish.Configuring_Tomcat=Configurando Tomcat...
 spanish.Changing_Folder_Permissions=Cambiando permisos de carpeta...
 spanish.Run_ScadaLTS_Now=Ejecutar Scada-LTS ahora
 spanish.Delete_Config=Desea eliminar todos los archivos en el directorio de Scada-LTS? (Si usted tiene algo haya creado y desea mantener, haga clic en No)
+spanish.Run_MySQL_Now=Ejecutar {#MySQLSeverName} ahora
 
 ; Tradução em inglês
 english.Tomcat_Settings_Label_Port_Caption0=Tomcat HTTP Port:
@@ -119,10 +125,12 @@ english.Configuring_Tomcat=Configuring Tomcat...
 english.Changing_Folder_Permissions=Changing folder permissions...
 english.Run_ScadaLTS_Now=Run Scada-LTS now
 english.Delete_Config=Remove all files in your Scada-LTS directory ? (If you have anything you created that you want to keep, click No)
+english.Run_MySQL_Now=Run {#MySQLSeverName} now
 
 [Run]
 ; Criação do Serviço Windows
 Filename: "{cmd}"; Parameters: "/c install_scadalts.bat install Scada-LTS --rename && timeout /t 2"; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
+Filename: "{cmd}"; Parameters: "/c install_mysql.bat install mysql8 && timeout /t 2"; WorkingDir: "{app}\mysql\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "//US//Scada-LTS --DisplayName ""Scada-LTS - Apache Tomcat"" --Description ""Scada-LTS service, powered by Apache Tomcat"" --Startup auto --Jvm ""{code:GetJVMDll|jre}"" --JvmOptions ""-Dfile.encoding=UTF-8;-Djavax.servlet.request.encoding=UTF-8;-Dcatalina.home={app}\tomcat;-Dcatalina.base={app}\tomcat;-Djava.io.tmpdir={app}\tomcat\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file={app}\tomcat\conf\logging.properties"""; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 ; Alterar permissões de pasta
 Filename: "{cmd}"; Parameters: "/c icacls ""{app}"" /grant *S-1-5-19:(OI)(CI)M /T"; Flags: runhidden; StatusMsg: "{cm:Changing_Folder_Permissions}"
@@ -134,10 +142,12 @@ Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{ap
 ; Iniciar serviço do Scada-LTS
 ;Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "start"; Flags: postinstall runascurrentuser runhidden nowait;
 Filename: "{cmd}"; Parameters: "/c net start Scada-LTS"; Description: {cm:Run_ScadaLTS_Now}; Flags: postinstall runascurrentuser runhidden nowait;
+Filename: "{cmd}"; Parameters: "/c net start mysql8"; Description: {cm:Run_MySQL_Now}; Flags: postinstall runascurrentuser runhidden nowait;
 
 [UninstallRun]
 ; Remoção do Serviço Windows
 Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "//DS//Scada-LTS"; Flags: runhidden; RunOnceId: "DelTomcatService"
+Filename: "{cmd}"; Parameters: "/c install_mysql.bat remove mysql8 && timeout /t 2"; WorkingDir: "{app}\mysql\bin\"; Flags: runhidden;
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}\tomcat\bin\Scada-LTS.exe"
@@ -156,6 +166,8 @@ Name: "{group}\Scada-LTS"; Filename: "http://localhost:{code:GetInstallSettings|
 Name: "{group}\Scada-LTS service manager"; Filename: "{app}\tomcat\bin\Scada-LTSw.exe"
 Name: "{commondesktop}\Scada-LTS"; Filename: "http://localhost:{code:GetInstallSettings|port}/Scada-LTS"; IconFilename: "{app}\scadalts.ico"
 Name: "{commondesktop}\Scada-LTS service manager"; Filename: "{app}\tomcat\bin\Scada-LTSw.exe"
+Name: "{commondesktop}\Start MySQL Server CE 8.0"; Filename: "{cmd}"; Parameters: "/c net start mysql8"; IconFilename: "{app}\scadalts.ico"
+Name: "{commondesktop}\Stop MySQL Server CE 8.0"; Filename: "{cmd}"; Parameters: "/c net stop mysql8"; IconFilename: "{app}\scadalts.ico"
 
 [Code]
 var
