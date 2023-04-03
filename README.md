@@ -41,7 +41,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
  
  ![Screenshot 2023-03-25 at 20 55 03](https://user-images.githubusercontent.com/35842300/227738741-895120c7-9c71-4c53-bd29-bb8184afe8e8.png)
  
- 4. Click on 'Finish':
+ 4. Set port 3308, Click on 'Finish':
  
  ![Screenshot 2023-03-25 at 20 56 49](https://user-images.githubusercontent.com/35842300/227738802-b92ef2ca-e818-496b-a03e-e3ec98d6cf07.png)
 
