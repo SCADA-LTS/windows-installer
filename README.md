@@ -41,7 +41,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
  
 ![db_screen_1](https://user-images.githubusercontent.com/35842300/229563933-ae8ebae0-e4c4-4267-8cd4-aa62a825839f.png)
  
- 4. Set port 3308 and click on 'Finish':
+ 4. Set port 3308 and click on 'Finish'. If the drivers have not been installed before, the program will suggest downloading and installing, click ok:
  
 ![db_screen_2](https://user-images.githubusercontent.com/35842300/229563990-11de75f8-86a8-40f5-b3cd-04e0ae417717.png)
 
