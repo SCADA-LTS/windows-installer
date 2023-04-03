@@ -9,4 +9,4 @@ IF EXIST data rm -R data
 echo %DATADIR%
 mkdir data
 cd bin
-mysqld --datadir %DATADIR% --initialize-insecure --user=%USER% --language=%MY_LNG%
+mysqld --datadir %DATADIR% --initialize-insecure --user=%USER% --language=%MY_LNG% --extra-sql-file=scadalts.sql

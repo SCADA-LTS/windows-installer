@@ -73,8 +73,7 @@ exit /b 0
 :doInstall
 rem Install the service
 echo Installing the service '%SERVICE_NAME%' ...
-%MYSQL_HOME%\my_init.bat
-"%EXECUTABLE%" --install %SERVICE_NAME%
+"%MYSQL_HOME%"\my_init.bat && "%EXECUTABLE%" --install %SERVICE_NAME%
 if not errorlevel 1 goto installed
 echo Failed installing '%SERVICE_NAME%' service
 exit /b 1
