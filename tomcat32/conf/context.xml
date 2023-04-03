@@ -54,10 +54,10 @@
                                                         org.apache.tomcat.jdbc.pool.interceptor.ResetAbandonedTimer;
                                                         org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport(threshold=1500)"
               username="root"
-              password="root"
+              password=""
               driverClassName="com.mysql.jdbc.Driver"
               defaultTransactionIsolation="READ_COMMITTED"
-              connectionProperties="useSSL=false"
-              url="jdbc:mysql://localhost:3306/scadalts"
+              connectionProperties="useSSL=false;allowPublicKeyRetrieval=true"
+              url="jdbc:mysql://localhost:3308/scadalts"
     />
 </Context>
