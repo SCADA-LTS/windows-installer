@@ -18,7 +18,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
 | Technology | Version | Description |
 | :--- | :---: | --- |
 | Java | 11 | Base programic language |
-| Dbeaver | 23.0.0 | Database client |
+| Dbeaver | 23.0.1 | Database client |
 
 ## 1.1 Java (Required) - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
 &nbsp;&nbsp;&nbsp;&nbsp;The base project is written in Java. So to start development a new features to Scada-LTS you need to install Java Development Kit (JDK). You can do that easily by downloading the valid version from the [jdk.java.net](https://jdk.java.net/java-se-ri/11) website. Then you only need to extract that file and set-up the PATH variable to */bin* directory.
@@ -39,11 +39,11 @@ Feel free to _fork_ this repository and create installers for your own versions 
  
  3. Select MySQL and click 'Next':
  
- ![Screenshot 2023-03-25 at 20 55 03](https://user-images.githubusercontent.com/35842300/227738741-895120c7-9c71-4c53-bd29-bb8184afe8e8.png)
+![db_screen_1](https://user-images.githubusercontent.com/35842300/229563933-ae8ebae0-e4c4-4267-8cd4-aa62a825839f.png)
  
- 4. Set port 3308, Click on 'Finish':
+ 4. Set port 3308 and click on 'Finish':
  
- ![Screenshot 2023-03-25 at 20 56 49](https://user-images.githubusercontent.com/35842300/227738802-b92ef2ca-e818-496b-a03e-e3ec98d6cf07.png)
+![db_screen_2](https://user-images.githubusercontent.com/35842300/229563990-11de75f8-86a8-40f5-b3cd-04e0ae417717.png)
 
 ## 2. Run installer v1.0.4 - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
 Download [ScadaLTS_v2.6.18_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.4/ScadaLTS_v2.6.18_Standalone_Setup.exe) and run;
