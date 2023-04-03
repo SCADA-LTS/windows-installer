@@ -18,7 +18,6 @@ Feel free to _fork_ this repository and create installers for your own versions 
 | Technology | Version | Description |
 | :--- | :---: | --- |
 | Java | 11 | Base programic language |
-| MySQL | 8.0.32 | Database server for data persistence |
 | Dbeaver | 23.0.0 | Database client |
 
 ## 1.1 Java (Required) - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
