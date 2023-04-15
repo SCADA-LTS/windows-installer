@@ -21,14 +21,9 @@ Feel free to _fork_ this repository and create installers for your own versions 
 | Dbeaver | 23.0.1 | Database client |
 
 ## 1.1 Java (Required) - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
-&nbsp;&nbsp;&nbsp;&nbsp;The base project is written in Java. So to start development a new features to Scada-LTS you need to install Java Development Kit (JDK). You can do that easily by downloading the valid version from the [jdk.java.net](https://jdk.java.net/java-se-ri/11) website. Then you only need to extract that file and set-up the PATH variable to */bin* directory.
+&nbsp;&nbsp;&nbsp;&nbsp;The base project is written in Java. So to start development a new features to Scada-LTS you need to install Java Development Kit (JDK).
 
-- For windows download version from [openjdk-11+28_windows-x64_bin.zip](https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip)
-- Extract that file in location where you want to keep your Java binaries  
-  *(for example C:\services\java\jdk-11)*  
-- Set-up the PATH environment variable to bin directory of your installation location  
-  *(for example C:\services\java\jdk-11\bin)*  
-- Verify that Java is installed correctly, open your terminal and type `java -version`
+- For windows download from [microsoft-jdk-11.0.18-windows-x64.msi](https://aka.ms/download-jdk/microsoft-jdk-11.0.18-windows-x64.msi) and run;
 
 ## 1.2. Client MySQL - Dbeaver (Optional) - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
 
