@@ -8,7 +8,7 @@ The main installer script (`Scada-LTS.iss`) may be modified and adapted under th
 
 Feel free to _fork_ this repository and create installers for your own versions of Scada-LTS.
 
-# Version > v1.0.4 - Table of content
+# Version v1.0.4 - Table of content
 **IMPORTANT!**  You need to update windows 7/8/10, otherwise there may be problems with the operation of the MySQL server.
 
 1. [Installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-installation-before-running-the-installer---up)
