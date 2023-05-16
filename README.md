@@ -1,5 +1,5 @@
+![capa](https://github.com/SCADA-LTS/windows-installer/assets/35842300/9bf2f5f7-9ad2-47ca-99a4-3a6c4c479f37)
 
-# Scada-LTS
 Installer for Scada-LTS developed with Inno Setup.
 
 If you are looking for the Scada-LTS installer `.exe` file, see the [Scada-LTS repository releases](https://github.com/SCADA-LTS/Scada-LTS/releases/latest).
