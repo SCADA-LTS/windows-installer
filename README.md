@@ -43,7 +43,6 @@ Feel free to _fork_ this repository and create installers for your own versions 
 ![db_screen_2](https://user-images.githubusercontent.com/35842300/229563990-11de75f8-86a8-40f5-b3cd-04e0ae417717.png)
 
 ## 2. Run installer v1.0.4 - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
-Download [ScadaLTS_v2.6.18_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.5/ScadaLTS_v2.6.18_Standalone_Setup.exe) and run;
 Download [ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.5/ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe) and run;
 
 # Old version <= v1.0.3 - Table of content
