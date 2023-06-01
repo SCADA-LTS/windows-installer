@@ -1,4 +1,4 @@
-![capa](https://github.com/SCADA-LTS/windows-installer/assets/35842300/9bf2f5f7-9ad2-47ca-99a4-3a6c4c479f37)
+![Scada-LTS logo](https://yt3.ggpht.com/2V_jz6rC-_z3Ir1SL5_TctnE5HAbq_rWbF0PHSfRy3VXdwowrP2XEfTpAcr_VH1TUbzsWjUVWTs=w2120-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj)
 
 Installer for Scada-LTS developed with Inno Setup.
 
