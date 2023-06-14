@@ -1,10 +1,11 @@
 ; Innacio - The Scada-LTS Windows installer
 
 #define MyAppName "Scada-LTS"
-#define MyAppVersion "2.7.5.3"
+#define MyAppVersion "2.7.5.3_4"
 #define MyAppURL "http://scada-lts.com/"
 #define MyAppFolder "/"
-#define MySQLSeverName "MySQL Server CE 8.0"
+#define MySQLSeverName "MySQL Community Server 8.0"
+#define JavaVersion "11"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -13,7 +14,7 @@
 AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407A}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName=Scada-LTS v2.7.5.3
+AppVerName=Scada-LTS v2.7.5.3_4
 AppComments=Scada-LTS is a free and open-source SCADA software
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisherURL={#MyAppURL}
@@ -24,7 +25,7 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadalts.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=ScadaLTS_v2.7.5.3_Beta_Standalone_Setup
+OutputBaseFilename=ScadaLTS_v2.7.5.3_4_Beta_Standalone_Setup
 Compression=lzma
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -39,8 +40,6 @@ Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortugue
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 
 [Files]
-; 32-bit Tomcat
-Source: "tomcat32\*"; DestDir: "{app}\tomcat"; Flags: ignoreversion createallsubdirs recursesubdirs; Check: not Is64BitInstallMode
 ; 64-bit Tomcat
 Source: "tomcat64\*"; DestDir: "{app}\tomcat"; Flags: ignoreversion createallsubdirs recursesubdirs; Check: Is64BitInstallMode
 ; Scada-LTS WebApp
@@ -71,7 +70,7 @@ brazilianportuguese.Tomcat_Settings_Invalid_Port=Porta HTTP inválida!
 brazilianportuguese.Tomcat_Settings_User_Fields_Missing=O campo "Nome de usuário" ou "Senha" está vazio!
 brazilianportuguese.Java_Settings_Caption=Configurações da Máquina Virtual Java
 brazilianportuguese.Java_Settings_Description=Configurar a Máquina Virtual Java utilizada no Scada-LTS
-brazilianportuguese.Java_Settings_Select_JRE=Por favor selecione o caminho do JRE 8 instalado no seu sistema. Note que se você possuir sistema operacional 64-bit, você deve especificar um caminho JRE 64-bit válido:
+brazilianportuguese.Java_Settings_Select_JRE=Por favor selecione o caminho do JRE {#JavaVersion} instalado no seu sistema. Note que se você possuir sistema operacional 64-bit, você deve especificar um caminho JRE 64-bit válido:
 brazilianportuguese.Java_Settings_Folder=Pasta:
 brazilianportuguese.Java_Settings_Invalid_JRE=O caminho especificado não é um JRE válido!
 brazilianportuguese.Installing_Service=Instalando serviço do Windows...
@@ -94,7 +93,7 @@ spanish.Tomcat_Settings_Invalid_Port=Puerto HTTP inválido!
 spanish.Tomcat_Settings_User_Fields_Missing=El campo "Nombre de usuario" o "Contraseña" está vacío!
 spanish.Java_Settings_Caption=Configuraciones de la Máquina Virtual Java
 spanish.Java_Settings_Description=Configurar la Máquina Virtual Java utilizada en Scada-LTS
-spanish.Java_Settings_Select_JRE=Por favor, seleccione la ruta del JRE 8 instalado en su sistema. Note que si usted posee sistema operacional 64-bit, debe especificar la ruta de un JRE 64-bit válido:
+spanish.Java_Settings_Select_JRE=Por favor, seleccione la ruta del JRE {#JavaVersion} instalado en su sistema. Note que si usted posee sistema operacional 64-bit, debe especificar la ruta de un JRE 64-bit válido:
 spanish.Java_Settings_Folder=Carpeta:
 spanish.Java_Settings_Invalid_JRE=La ruta especificada no es un JRE válido!
 spanish.Installing_Service=Instalando servicio de Windows...
@@ -117,7 +116,7 @@ english.Tomcat_Settings_Invalid_Port=Invalid HTTP Port!
 english.Tomcat_Settings_User_Fields_Missing=The "Username" or "Password" field is empty!
 english.Java_Settings_Caption=Java Virtual Machine Settings
 english.Java_Settings_Description=Configure the Java Virtual Machine used in Scada-LTS
-english.Java_Settings_Select_JRE=Please select the path of a JRE 8 installed on your system. Note that if you have a 64-bit operating system, you must specify a 64-bit JRE:
+english.Java_Settings_Select_JRE=Please select the path of a JRE {#JavaVersion} installed on your system. Note that if you have a 64-bit operating system, you must specify a 64-bit JRE:
 english.Java_Settings_Folder=Folder:
 english.Java_Settings_Invalid_JRE=The specified path is not a valid JRE!
 english.Installing_Service=Installing Windows service...
@@ -128,9 +127,11 @@ english.Delete_Config=Remove all files in your Scada-LTS directory ? (If you hav
 english.Run_MySQL_Now=Run {#MySQLSeverName} now
 
 [Run]
+; Filename: "{cmd}"; Parameters: "/c net stop Scada-LTS && timeout /t 2"; Flags: runhidden;
+; Filename: "{cmd}"; Parameters: "/c net stop ""{#MySQLSeverName}"" && timeout /t 2"; Flags: runhidden;
 ; Criação do Serviço Windows
 Filename: "{cmd}"; Parameters: "/c install_scadalts.bat install Scada-LTS --rename && timeout /t 2"; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
-Filename: "{cmd}"; Parameters: "/c install_mysql.bat install mysql8 && timeout /t 2"; WorkingDir: "{app}\mysql\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
+Filename: "{cmd}"; Parameters: "/c install_mysql.bat install ""{#MySQLSeverName}"" && timeout /t 2"; WorkingDir: "{app}\mysql\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "//US//Scada-LTS --DisplayName ""Scada-LTS - Apache Tomcat"" --Description ""Scada-LTS service, powered by Apache Tomcat"" --Startup auto --Jvm ""{code:GetJVMDll|jre}"" --JvmOptions ""-Dfile.encoding=UTF-8;-Djavax.servlet.request.encoding=UTF-8;-Dcatalina.home={app}\tomcat;-Dcatalina.base={app}\tomcat;-Djava.io.tmpdir={app}\tomcat\temp;-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager;-Djava.util.logging.config.file={app}\tomcat\conf\logging.properties"""; WorkingDir: "{app}\tomcat\bin\"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 ; Alterar permissões de pasta
 Filename: "{cmd}"; Parameters: "/c icacls ""{app}"" /grant *S-1-5-19:(OI)(CI)M /T"; Flags: runhidden; StatusMsg: "{cm:Changing_Folder_Permissions}"
@@ -142,12 +143,12 @@ Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{ap
 ; Iniciar serviço do Scada-LTS
 ;Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "start"; Flags: postinstall runascurrentuser runhidden nowait;
 Filename: "{cmd}"; Parameters: "/c net start Scada-LTS"; Description: {cm:Run_ScadaLTS_Now}; Flags: postinstall runascurrentuser runhidden nowait;
-Filename: "{cmd}"; Parameters: "/c net start mysql8"; Description: {cm:Run_MySQL_Now}; Flags: postinstall runascurrentuser runhidden nowait;
+Filename: "{cmd}"; Parameters: "/c net start ""{#MySQLSeverName}"""; Description: {cm:Run_MySQL_Now}; Flags: postinstall runascurrentuser runhidden nowait;
 
 [UninstallRun]
 ; Remoção do Serviço Windows
 Filename: "{app}\tomcat\bin\Scada-LTS.exe"; Parameters: "//DS//Scada-LTS"; Flags: runhidden; RunOnceId: "DelTomcatService"
-Filename: "{cmd}"; Parameters: "/c install_mysql.bat remove mysql8 && timeout /t 2"; WorkingDir: "{app}\mysql\bin\"; Flags: runhidden;
+Filename: "{cmd}"; Parameters: "/c install_mysql.bat remove ""{#MySQLSeverName}"" && timeout /t 2"; WorkingDir: "{app}\mysql\bin\"; Flags: runhidden;
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}\tomcat\bin\Scada-LTS.exe"
@@ -166,8 +167,8 @@ Name: "{group}\Scada-LTS"; Filename: "http://localhost:{code:GetInstallSettings|
 Name: "{group}\Scada-LTS service manager"; Filename: "{app}\tomcat\bin\Scada-LTSw.exe"
 Name: "{commondesktop}\Scada-LTS"; Filename: "http://localhost:{code:GetInstallSettings|port}/Scada-LTS"; IconFilename: "{app}\scadalts.ico"
 Name: "{commondesktop}\Scada-LTS service manager"; Filename: "{app}\tomcat\bin\Scada-LTSw.exe"
-Name: "{commondesktop}\Start MySQL Server CE 8.0"; Filename: "{cmd}"; Parameters: "/c net start mysql8"; IconFilename: "{app}\scadalts.ico"
-Name: "{commondesktop}\Stop MySQL Server CE 8.0"; Filename: "{cmd}"; Parameters: "/c net stop mysql8"; IconFilename: "{app}\scadalts.ico"
+Name: "{commondesktop}\Start {#MySQLSeverName}"; Filename: "{cmd}"; Parameters: "/c net start ""{#MySQLSeverName}"""; IconFilename: "{app}\scadalts.ico"
+Name: "{commondesktop}\Stop {#MySQLSeverName}"; Filename: "{cmd}"; Parameters: "/c net stop ""{#MySQLSeverName}"""; IconFilename: "{app}\scadalts.ico"
 
 [Code]
 var
