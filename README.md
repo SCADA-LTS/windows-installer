@@ -7,27 +7,27 @@ If you are looking for the Scada-LTS installer `.exe` file, see the [Scada-LTS r
 The main installer script (`Scada-LTS.iss`) may be modified and adapted under the terms of the MIT license. The other files in this repository (Tomcat, Scada-LTS Builds, etc) have different licenses.
 
 Feel free to _fork_ this repository and create installers for your own versions of Scada-LTS.
-
-# Version v1.0.4 - Table of content
+## Version v1.0.4
+# Table of content
 **IMPORTANT!**  You need to update windows 7/8/10, otherwise there may be problems with the operation of the MySQL server.
 
-1. [Installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-installation-before-running-the-installer---up)
-* 1.1 [Java (Required)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#11-java-required---up)
-* 1.2 [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-client-mysql---dbeaver-optional---up)
-2. [Run installer v1.0.4](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer-v104---up)
+1. [Installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-installation-before-running-the-installer-)
+* 1.1 [Java (Required)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#11-java-required-)
+* 1.2 [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-client-mysql---dbeaver-optional-)
+2. [Run installer v1.0.4](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer-v104-)
 
-# 1. Installation before running the installer - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
+# 1. Installation before running the installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 | Technology | Version | Description |
 | :--- | :---: | --- |
 | Java | 11 | Base programic language |
 | Dbeaver | 23.0.1 | Database client |
 
-## 1.1 Java (Required) - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
+## 1.1 Java (Required) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 &nbsp;&nbsp;&nbsp;&nbsp;The base project is written in Java. So to start development a new features to Scada-LTS you need to install Java Development Kit (JDK).
 
 - For windows download from [microsoft-jdk-11.0.18-windows-x64.msi](https://aka.ms/download-jdk/microsoft-jdk-11.0.18-windows-x64.msi) and run;
 
-## 1.2. Client MySQL - Dbeaver (Optional) - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
+## 1.2. Client MySQL - Dbeaver (Optional) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 
  1. Download [dbeaver-ce-latest-x86_64-setup.exe](https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe) and install;
  2. Run dbeaver, and click on 'New Database Connection':
@@ -42,8 +42,8 @@ Feel free to _fork_ this repository and create installers for your own versions 
  
 ![db_screen_2](https://user-images.githubusercontent.com/35842300/229563990-11de75f8-86a8-40f5-b3cd-04e0ae417717.png)
 
-## 2. Run installer v1.0.4 - [up](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#version-v104---table-of-content)
-Download [ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.5/ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe) and run;
+## 2. Run installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
+Download [Installer_v1.0.6_ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.6/Installer_v1.0.6_ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe) and run;
 
 # Old version <= v1.0.3 - Table of content
 1. [Required installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-required-installation-before-running-the-installer---up)
