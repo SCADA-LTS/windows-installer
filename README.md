@@ -14,7 +14,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
 1. [Installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-installation-before-running-the-installer---)
 * 1.1 [Java (Required)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#11-java-required---)
 * 1.2 [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-client-mysql---dbeaver-optional---)
-2. [Run installer v1.0.4](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer-v104---)
+2. [Run installer v1.0.4](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer---)
 
 # 1. Installation before running the installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 | Technology | Version | Description |
