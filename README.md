@@ -46,6 +46,7 @@ When installing Java remember to set **Will be installed on local hard drive** o
 ## 2. Run installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 Download [Installer_v1.0.6_ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.6/Installer_v1.0.6_ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe) and run;
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # [Archive 13.07.2023] <= v1.0.3 - Table of content
 1. [Required installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-required-installation-before-running-the-installer---up)
 * 1.1 [Java](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#11-java---up)
