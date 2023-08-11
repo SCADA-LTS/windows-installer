@@ -16,7 +16,7 @@ Feel free to _fork_ this repository and create installers for your own versions 
 
 1. [Install Java (Required)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-install-java-required---)
 2. [Run installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer---)
-3. [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-client-mysql---dbeaver-optional---)
+3. [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#3-client-mysql---dbeaver-optional---)
 
 ## 1. Install Java (Required) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 The base project is written in Java. So to run Scada-LTS you need minmal to install Java Runtime Environment (Java Development Kit - JDK include JRE). If you don't have Java 11 installed, then Download [microsoft-jdk-11.0.18-windows-x64.msi](https://aka.ms/download-jdk/microsoft-jdk-11.0.18-windows-x64.msi) file and run;
