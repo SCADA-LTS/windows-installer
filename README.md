@@ -9,26 +9,39 @@ The main installer script (`Scada-LTS.iss`) may be modified and adapted under th
 Feel free to _fork_ this repository and create installers for your own versions of Scada-LTS.
 # Table of content
 **IMPORTANT!**  You need to update windows 7/8/10, otherwise there may be problems with the operation of the MySQL server.
-
-1. [Installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-installation-before-running-the-installer---)
-* 1.1 [Java (Required)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#11-java-required---)
-* 1.2 [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-client-mysql---dbeaver-optional---)
-2. [Run installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer---)
-
-# 1. Installation before running the installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 | Technology | Version | Description |
 | :--- | :---: | --- |
 | Java | 11 | Base programic language |
 | Dbeaver | 23.0.1 | Database client |
 
-## 1.1 Java (Required) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
+1. [Install Java (Required)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-install-java-required---)
+2. [Run installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#2-run-installer---)
+3. [Client MySQL - Dbeaver (Optional)](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#12-client-mysql---dbeaver-optional---)
+
+## 1. Install Java (Required) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 The base project is written in Java. So to run Scada-LTS you need minmal to install Java Runtime Environment (Java Development Kit - JDK include JRE). If you don't have Java 11 installed, then Download [microsoft-jdk-11.0.18-windows-x64.msi](https://aka.ms/download-jdk/microsoft-jdk-11.0.18-windows-x64.msi) file and run;
 
 When installing Java remember to set **Will be installed on local hard drive** on **Set JAVA_HOME variable**.
 
 <img width="380" alt="image" src="https://github.com/SCADA-LTS/Scada-LTS/assets/56111976/afcdc98f-c39f-44a7-8ff1-c6c6865f5410">
 
-## 1.2. Client MySQL - Dbeaver (Optional) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
+## 2. Run installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
+1. Go to https://github.com/SCADA-LTS/windows-installer and select [releases](https://github.com/SCADA-LTS/windows-installer/releases) tab and then download latest **Beta** release to desired folder.
+
+    > NOTE: There always be two versions of standalone installer, beta and non-beta. For development we recommend using Beta version. Non-beta version might be more stable but may not include some important features that are necessery for development.
+
+2. Launch the installer.
+
+    > NOTE: if blue Windows Defender SmartScreen pop-up appears select "More info" and "Run anyway"
+
+3. Installer will ask for initial Tomcat configuration. Use example data from below:
+
+    * Tomcat HTTP Port: `8080`
+    * Username: `tcuser`
+    * Password: `tcuser`
+
+    > NOTE: Installed database is available on port 3308.
+## 3. Client MySQL - Dbeaver (Optional) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 
  1. Download [dbeaver-ce-latest-x86_64-setup.exe](https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe) and install;
  2. Run dbeaver, and click on 'New Database Connection':
@@ -42,10 +55,6 @@ When installing Java remember to set **Will be installed on local hard drive** o
  4. Set port 3308 and click on 'Finish'. If the drivers have not been installed before, the program will suggest downloading and installing, click ok:
  
 ![db_screen_2](https://user-images.githubusercontent.com/35842300/229563990-11de75f8-86a8-40f5-b3cd-04e0ae417717.png)
-
-## 2. Run installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
-Download [Installer_v1.0.6_ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe](https://github.com/SCADA-LTS/windows-installer/releases/download/v1.0.6/Installer_v1.0.6_ScadaLTS_v2.7.5.3_Beta_Standalone_Setup.exe) and run;
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # [Archive 13.07.2023] <= v1.0.3 - Table of content
 1. [Required installation before running the installer](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#1-required-installation-before-running-the-installer---up)
