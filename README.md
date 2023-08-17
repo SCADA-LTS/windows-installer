@@ -26,7 +26,7 @@ When installing Java remember to set **Will be installed on local hard drive** o
 <img width="380" alt="image" src="https://github.com/SCADA-LTS/Scada-LTS/assets/56111976/afcdc98f-c39f-44a7-8ff1-c6c6865f5410">
 
 ## 2. Run installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
-1. Go to https://github.com/SCADA-LTS/windows-installer and select [releases](https://github.com/SCADA-LTS/windows-installer/releases) tab and then download latest **Beta** release to desired folder.
+1. Go to [releases](https://github.com/SCADA-LTS/windows-installer/releases/tag/v1.0.6) and then download latest **Beta** release to desired folder.
 
     > NOTE: There always be two versions of standalone installer, beta and non-beta. For development we recommend using Beta version. Non-beta version might be more stable but may not include some important features that are necessery for development.
 
