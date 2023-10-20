@@ -1,7 +1,7 @@
 ; Innacio - The Scada-LTS Windows installer
 
 #define MyAppName "Scada-LTS"
-#define MyAppVersion "2.7.5.3"
+#define MyAppVersion "2.6.18"
 #define MyAppURL "http://scada-lts.com/"
 #define MyAppFolder "/"
 #define MySQLSeverName "MySQL Community Server 8.0"
@@ -11,10 +11,10 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407A}
+AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407B}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName=Scada-LTS v2.7.5.3
+AppVerName=Scada-LTS v2.6.18
 AppComments=Scada-LTS is a free and open-source SCADA software
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisherURL={#MyAppURL}
@@ -25,14 +25,15 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadalts.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=ScadaLTS_v2.7.5.3_Beta_Standalone_Setup
-Compression=lzma
+OutputBaseFilename=Installer_v1.0.7_ScadaLTS_v2.6.18_Setup
+Compression=zip
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
 WizardImageFile=capa.bmp
 WizardSmallImageFile=logo.bmp
 DisableWelcomePage=False
 UninstallDisplayIcon={app}\scadalts.ico
+DiskSpanning=no
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
