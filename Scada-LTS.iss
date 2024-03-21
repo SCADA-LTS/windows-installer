@@ -1,7 +1,7 @@
 ; Innacio - The Scada-LTS Windows installer
 
 #define MyAppName "Scada-LTS"
-#define MyAppVersion "2.6.18_2.0.0"
+#define MyAppVersion "2.6.18_2.0.1"
 #define MyAppURL "http://scada-lts.com/"
 #define MyAppFolder "/"
 #define MySQLSeverName "MySQL Community Server 8.0"
@@ -14,7 +14,7 @@
 AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407B}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName=Scada-LTS v2.6.18 (Installer v2.0.0)
+AppVerName=Scada-LTS v2.6.18 (Installer v2.0.1)
 AppComments=Scada-LTS is a free and open-source SCADA software
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisherURL={#MyAppURL}
@@ -25,7 +25,7 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadalts.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=Scada-LTS_v2.6.18_Installer_v2.0.0_Setup
+OutputBaseFilename=Scada-LTS_v2.6.18_Installer_v2.0.1_Setup
 Compression=zip
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -626,7 +626,7 @@ begin
     Width := ScaleX(121);
     Height := ScaleY(21);
     TabOrder := 0;
-    Checked := True;
+    Checked := False;
   end;
 
   // Label_MySQLPort

@@ -1,5 +1,4 @@
 @echo off
-echo 'my_init.bat - current path:' %1
 SETLOCAL
 set CURRENT_PATH=%~1
 echo %CURRENT_PATH%
