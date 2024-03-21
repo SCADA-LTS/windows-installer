@@ -41,20 +41,19 @@ set "SELF=%~dp0%install_mysql.bat"
 
 set DEFAULT_SERVICE_NAME=%2
 set SERVICE_NAME=%DEFAULT_SERVICE_NAME%
-set "EXECUTABLE=%cd%\mysqld.exe"
-cd ..
-set "MYSQL_HOME=%cd%"
+set "MYSQL_HOME=%cd%\mysql\"
+set "EXECUTABLE=%MYSQL_HOME%\bin\mysqld.exe"
 
 :doneEndorsed
 rem Process the requested command
-if /i %1 == install goto doInstall
-if /i %1 == remove goto doRemove
-if /i %1 == uninstall goto doRemove
+if /i %1==install goto doInstall
+if /i %1==remove goto doRemove
+if /i %1==uninstall goto doRemove
 echo Unknown parameter "%SERVICE_CMD%"
 :displayUsage
 echo.
 echo Usage: service.bat install/remove [service_name [--rename]] [--user username]
-exit /b 1
+exit /b 2
 
 :doRemove
 rem Remove the service
@@ -73,10 +72,11 @@ exit /b 0
 :doInstall
 rem Install the service
 echo Installing the service '%SERVICE_NAME%' ...
-"%MYSQL_HOME%"\my_init.bat && "%EXECUTABLE%" --install %SERVICE_NAME%
+cd "%MYSQL_HOME%"
+my_init.bat "%MYSQL_HOME%" && "%EXECUTABLE%" --install %SERVICE_NAME%
 if not errorlevel 1 goto installed
 echo Failed installing '%SERVICE_NAME%' service
-exit /b 1
+exit /b 3
 :installed
 echo The service '%SERVICE_NAME%' has been installed.
 exit /b 0
