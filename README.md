@@ -26,7 +26,7 @@ When installing Java remember to set **Will be installed on local hard drive** o
 <img width="380" alt="image" src="https://github.com/SCADA-LTS/Scada-LTS/assets/56111976/afcdc98f-c39f-44a7-8ff1-c6c6865f5410">
 
 ## 2. Run installer - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
-1. Go to [releases](https://github.com/SCADA-LTS/windows-installer/releases/tag/v1.0.6) and then download latest **Beta** release to desired folder.
+1. Go to [releases](https://github.com/SCADA-LTS/windows-installer/releases) and then download latest **Beta** release to desired folder.
 
     > NOTE: There always be two versions of standalone installer, beta and non-beta. For development we recommend using Beta version. Non-beta version might be more stable but may not include some important features that are necessery for development.
 
@@ -36,11 +36,28 @@ When installing Java remember to set **Will be installed on local hard drive** o
 
 3. Installer will ask for initial Tomcat configuration. Use example data from below:
 
-    * Tomcat HTTP Port: `8080`
-    * Username: `tcuser`
-    * Password: `tcuser`
+![image](https://github.com/SCADA-LTS/windows-installer/assets/35842300/52e0d58c-2899-48e3-ba22-7f3f9f71673f)
 
-    > NOTE: Installed database is available on port 3308.
+
+    * Tomcat HTTP Port: `8080`
+    * Username: `tcUser`
+    * Password: `tcUser`
+      
+5. Installer will ask for initial for MySQL Server configuration. Use example data from below:
+
+For the correct operation of the Scada-LTS application, a MySQL database server is required so that the application can record data.
+
+Check 'Install local server' if you do not have the MySQL server installed that you want to use with the Scada-LTS application, then the installer will install a local MySQL server. (mark yellow)
+
+![image](https://github.com/SCADA-LTS/windows-installer/assets/35842300/e18a46f2-fbe6-459a-b134-a0924203ded1)
+
+If you don't have MySQL server installed, you can leave it by default, if you have it installed and want to use the application with your MySQL server, enter the data for this server.
+
+    * Port: `3306`
+    * Host: `localhost`
+    * Username: `root`
+    * Password: `root`
+
 ## 3. Client MySQL - Dbeaver (Optional) - [↑↑↑](https://github.com/SCADA-LTS/windows-installer/blob/master/README.md#table-of-content)
 
  1. Download [dbeaver-ce-latest-x86_64-setup.exe](https://dbeaver.io/files/dbeaver-ce-latest-x86_64-setup.exe) and install;
