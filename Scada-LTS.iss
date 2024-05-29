@@ -1,7 +1,7 @@
 ; Innacio - The Scada-LTS Windows installer
 
 #define MyAppName "Scada-LTS"
-#define MyAppVersion "2.6.18_2.0.1"
+#define MyAppVersion "2.6.18_2.0.2"
 #define MyAppURL "http://scada-lts.com/"
 #define MyAppFolder "/"
 #define MySQLSeverName "MySQL Community Server 8.0"
@@ -14,7 +14,7 @@
 AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407B}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName=Scada-LTS v2.6.18 (Installer v2.0.1)
+AppVerName=Scada-LTS v2.6.18 (Installer v2.0.2)
 AppComments=Scada-LTS is a free and open-source SCADA software
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisherURL={#MyAppURL}
@@ -25,7 +25,7 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadalts.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=Scada-LTS_v2.6.18_Installer_v2.0.1_Setup
+OutputBaseFilename=Scada-LTS_v2.6.18_Installer_v2.0.2_Setup
 Compression=zip
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -193,6 +193,10 @@ english.MySQL_Settings_Edit_Host_Text0=localhost
 english.MySQL_Settings_Edit_Username_Text0=root
 english.MySQL_Settings_Edit_Password_Text0=root
 
+[InstallDelete]
+Type: filesandordirs; Name: "{app}\tomcat"
+Type: filesandordirs; Name: "{app}\mysql"; Check: ShouldCheckInstallLocalServer;
+
 [Run]
 ; Filename: "{cmd}"; Parameters: "/c net stop Scada-LTS && timeout /t 2"; Flags: runhidden;
 ; Filename: "{cmd}"; Parameters: "/c net stop ""{#MySQLSeverName}"" && timeout /t 2"; Flags: runhidden;
@@ -207,6 +211,8 @@ Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{ap
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-host>', '{code:GetInstallSettings|mysql_host}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-username>', '{code:GetInstallSettings|mysql_username}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-password>', '{code:GetInstallSettings|mysql_password}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
+Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""([System.Environment]::SetEnvironmentVariable('CATALINA_HOME', $null, 'Machine'))"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
+Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""([System.Environment]::SetEnvironmentVariable('CATALINA_HOME', '{app}\tomcat', 'Machine'))"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 
 Filename: "{cmd}"; Parameters: "/c install_scadalts.bat install Scada-LTS --rename && timeout /t 2"; WorkingDir: "{app}"; Flags: runhidden; StatusMsg: "{cm:Installing_Service}"
 
@@ -228,6 +234,7 @@ Filename: "{cmd}"; Parameters: "/c net start ""{#MySQLSeverName}"""; Description
 ; Remoção do Serviço Windows
 Filename: "{cmd}"; Parameters: "/c install_scadalts.bat remove Scada-LTS && timeout /t 2"; WorkingDir: "{app}"; Flags: runhidden;
 Filename: "{cmd}"; Parameters: "/c install_mysql.bat remove ""{#MySQLSeverName}"" && timeout /t 2"; WorkingDir: "{app}"; Flags: runhidden;
+Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""([System.Environment]::SetEnvironmentVariable('CATALINA_HOME', $null, 'Machine'))"" "; Flags: runhidden;
 
 [UninstallDelete]
 Type: filesandordirs; Name: "{app}\tomcat\bin\Scada-LTS.exe"
