@@ -51,7 +51,7 @@ Check 'Install local server' if you do not have the MySQL server installed that 
 
 ![image](https://github.com/SCADA-LTS/windows-installer/assets/35842300/e18a46f2-fbe6-459a-b134-a0924203ded1)
 
-If you don't have MySQL server installed, you can leave it by default, if you have it installed and want to use the application with your MySQL server, enter the data for this server.
+If you have MySQL server installed, you can leave it by default, if you have it installed and want to use the application with your MySQL server, enter the data for this server.
 
     * Port: `3306`
     * Host: `localhost`
