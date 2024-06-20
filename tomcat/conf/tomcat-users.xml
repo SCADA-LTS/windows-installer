@@ -21,6 +21,10 @@
               version="1.0">
 
   <role rolename="manager-gui"/>
-  <user username="<user-name>" password="<user-password>" roles="manager-gui"/>
+  <role rolename="manager-script"/>
+  <role rolename="manager-jmx"/>
+  <role rolename="manager-status"/>
+  <role rolename="monitoring"/>
+  <user username="<user-name>" password="<user-password>" roles="manager-gui,manager-script,manager-jmx,manager-status,monitoring"/>
 
 </tomcat-users>

@@ -39,7 +39,7 @@
               validationQuery="SELECT 1"
               validationInterval="30000"
               timeBetweenEvictionRunsMillis="30000"
-              maxActive="80"
+              maxActive="100"
               minIdle="10"
               maxWait="10000"
               initialSize="10"
@@ -58,6 +58,6 @@
               driverClassName="com.mysql.jdbc.Driver"
               defaultTransactionIsolation="READ_COMMITTED"
               connectionProperties="useSSL=false;allowPublicKeyRetrieval=true"
-              url="jdbc:mysql://<mysql-host>:<mysql-port>/scadalts"
+              url="jdbc:mysql://<mysql-host>:<mysql-port>/<mysql-database>"
     />
 </Context>

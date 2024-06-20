@@ -16,6 +16,6 @@ if not exist data\ (
     xcopy /x /f /y %MY_INI% %BIN_PATH%
     cd "%BIN_PATH%"
     mysqld --defaults-file="%MY_INI%" --datadir "%DATADIR%" --initialize-insecure --user=%USER% --language=%MY_LNG% --init-file="%INIT_SCHEMA_PATH%" --console
-    rem & start mysqld & timeout /t 20 & mysql --user root --port <port-mysql> --database scadalts < "%FILE_SQL%"
+    rem & start mysqld & timeout /t 20 & mysql --user root --port <port-mysql> --database <mysql-database> < "%FILE_SQL%"
 )
 

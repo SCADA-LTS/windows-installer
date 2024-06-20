@@ -1,7 +1,7 @@
 ; Innacio - The Scada-LTS Windows installer
 
 #define MyAppName "Scada-LTS"
-#define MyAppVersion "2.6.18_2.0.2"
+#define MyAppVersion "2.6.18.1_2.0.3"
 #define MyAppURL "http://scada-lts.com/"
 #define MyAppFolder "/"
 #define MySQLSeverName "MySQL Community Server 8.0"
@@ -14,7 +14,7 @@
 AppId={{0E856116-C05F-4AEB-A24A-19B20DFE407B}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-AppVerName=Scada-LTS v2.6.18 (Installer v2.0.2)
+AppVerName=Scada-LTS v2.6.18.1 (Installer v2.0.3)
 AppComments=Scada-LTS is a free and open-source SCADA software
 ;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisherURL={#MyAppURL}
@@ -25,7 +25,7 @@ DefaultGroupName={#MyAppName}
 LicenseFile={#MyAppFolder}\License.rtf
 SetupIconFile={#MyAppFolder}\scadalts.ico
 OutputDir={#MyAppFolder}\bin
-OutputBaseFilename=Scada-LTS_v2.6.18_Installer_v2.0.2_Setup
+OutputBaseFilename=Scada-LTS_v2.6.18.1_Installer_v2.0.3_Setup
 Compression=zip
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64
@@ -51,7 +51,7 @@ Source: install_scadalts.bat; DestDir: "{app}"; Flags: ignoreversion;
 Source: "Scada-LTS.war"; DestDir: "{app}\tomcat\webapps"; Flags: ignoreversion;
 Source: "scadalts.ico"; DestDir: "{app}"; Flags: ignoreversion
 
-; 64-bit MySQL Community Edition 8.0.32
+; 64-bit MySQL Community Edition 8.0
 Source: "mysql\server\*"; DestDir: "{app}\mysql"; Flags: ignoreversion createallsubdirs recursesubdirs; Check: Is64BitInstallMode and ShouldCheckInstallLocalServer;
 Source: "mysql\my.ini"; DestDir: "{app}\mysql"; Flags: ignoreversion; Check: ShouldCheckInstallLocalServer;
 Source: "mysql\scadalts.sql"; DestDir: "{app}\mysql"; Flags: ignoreversion; Check: ShouldCheckInstallLocalServer;
@@ -70,8 +70,8 @@ brazilianportuguese.Tomcat_Settings_Label_Username_Caption0=Nome de Usuário:
 brazilianportuguese.Tomcat_Settings_Label_Password_Caption0=Senha:
 brazilianportuguese.Tomcat_Settings_Label_TomcatSettings_Caption0=Utilize os campos abaixo para alterar as configurações do Apache Tomcat.
 brazilianportuguese.Tomcat_Settings_Edit_Port_Text0=8080
-brazilianportuguese.Tomcat_Settings_Edit_Username_Text0=tcUser
-brazilianportuguese.Tomcat_Settings_Edit_Password_Text0=tcUser
+brazilianportuguese.Tomcat_Settings_Edit_Username_Text0=tcadmin
+brazilianportuguese.Tomcat_Settings_Edit_Password_Text0=tcadmin
 brazilianportuguese.Tomcat_Settings_Caption=Configurações do Tomcat
 brazilianportuguese.Tomcat_Settings_Description=Configurar o Apache Tomcat utilizado no Scada-LTS
 brazilianportuguese.Tomcat_Settings_Invalid_Port=Porta HTTP inválida!
@@ -89,8 +89,9 @@ brazilianportuguese.Delete_Config=Remover todos os arquivos do Scada-LTS ? (Se v
 brazilianportuguese.Run_MySQL_Now=Executar o {#MySQLSeverName} agora
 
 brazilianportuguese.MySQL_Settings_Label_Port_Caption0=Porta:
-brazilianportuguese.MySQL_Settings_Label_InstallLocalServer_Caption0=Devo instalar um servidor local?
+brazilianportuguese.MySQL_Settings_Label_InstallLocalServer_Caption0=Instalar servidor local:
 brazilianportuguese.MySQL_Settings_Label_Host_Caption0=Host:
+brazilianportuguese.MySQL_Settings_Label_Databasename_Caption0=Nome do banco de dados:
 brazilianportuguese.MySQL_Settings_Label_MySQLUser_Caption0=Criar usuário para o {#MySQLSeverName}:
 brazilianportuguese.MySQL_Settings_Label_Username_Caption0=Nome de Usuário:
 brazilianportuguese.MySQL_Settings_Label_Password_Caption0=Senha:
@@ -98,11 +99,14 @@ brazilianportuguese.MySQL_Settings_Label_MySQLSettings_Caption0=Utilize os campo
 brazilianportuguese.MySQL_Settings_Caption=Configurações do {#MySQLSeverName}
 brazilianportuguese.MySQL_Settings_Description=Configurar o {#MySQLSeverName} utilizado no Scada-LTS
 brazilianportuguese.MySQL_Settings_Invalid_Port=Porta HTTP inválida!
-brazilianportuguese.MySQL_Settings_User_Fields_Missing=O campo "Nome de usuário" ou "Senha" está vazio!
+brazilianportuguese.MySQL_Settings_User_Fields_Missing=O campo "Nome de usuário" está vazio!
+brazilianportuguese.MySQL_Settings_Databasename_Fields_Missing=O campo "Nome do banco de dados" está vazio!
+
 brazilianportuguese.Configuring_MySQL=Configurando {#MySQLSeverName}...
 
 brazilianportuguese.MySQL_Settings_Edit_Port_Text0=3306
 brazilianportuguese.MySQL_Settings_Edit_Host_Text0=localhost
+brazilianportuguese.MySQL_Settings_Edit_Databasename_Text0=scadalts
 brazilianportuguese.MySQL_Settings_Edit_Username_Text0=root
 brazilianportuguese.MySQL_Settings_Edit_Password_Text0=root
 
@@ -113,8 +117,8 @@ spanish.Tomcat_Settings_Label_Username_Caption0=Nombre de Usuario:
 spanish.Tomcat_Settings_Label_Password_Caption0=Contraseña:
 spanish.Tomcat_Settings_Label_TomcatSettings_Caption0=Utilice los campos abajo para cambiar las configuraciones de Apache Tomcat.
 spanish.Tomcat_Settings_Edit_Port_Text0=8080
-spanish.Tomcat_Settings_Edit_Username_Text0=tcUser
-spanish.Tomcat_Settings_Edit_Password_Text0=tcUser
+spanish.Tomcat_Settings_Edit_Username_Text0=tcadmin
+spanish.Tomcat_Settings_Edit_Password_Text0=tcadmin
 spanish.Tomcat_Settings_Caption=Configuraciones de Tomcat
 spanish.Tomcat_Settings_Description=Configurar Apache Tomcat utilizado en Scada-LTS
 spanish.Tomcat_Settings_Invalid_Port=Puerto HTTP inválido!
@@ -132,8 +136,9 @@ spanish.Delete_Config=Desea eliminar todos los archivos en el directorio de Scad
 spanish.Run_MySQL_Now=Ejecutar {#MySQLSeverName} ahora
 
 spanish.MySQL_Settings_Label_Port_Caption0=Puerto:
-spanish.MySQL_Settings_Label_InstallLocalServer_Caption0=Debo instalar un servidor local?
+spanish.MySQL_Settings_Label_InstallLocalServer_Caption0=Instalar servidor local:
 spanish.MySQL_Settings_Label_Host_Caption0=Host:
+spanish.MySQL_Settings_Label_Databasename_Caption0=Nombre de la base de datos:
 spanish.MySQL_Settings_Label_MySQLUser_Caption0=Crear usuario para {#MySQLSeverName}:
 spanish.MySQL_Settings_Label_Username_Caption0=Nombre de Usuario:
 spanish.MySQL_Settings_Label_Password_Caption0=Contraseña:
@@ -141,11 +146,14 @@ spanish.MySQL_Settings_Label_MySQLSettings_Caption0=Utilice los campos abajo par
 spanish.MySQL_Settings_Caption=Configuraciones de {#MySQLSeverName}
 spanish.MySQL_Settings_Description=Configurar {#MySQLSeverName} utilizado en Scada-LTS
 spanish.MySQL_Settings_Invalid_Port=Puerto HTTP inválido!
-spanish.MySQL_Settings_User_Fields_Missing=El campo "Nombre de usuario" o "Contraseña" está vacío!
+spanish.MySQL_Settings_User_Fields_Missing=El campo "Nombre de usuario" está vacío!
+spanish.MySQL_Settings_Databasename_Fields_Missing=El campo "Nombre de la base de datos" está vacío!
+
 spanish.Configuring_MySQL=Configurando {#MySQLSeverName}...
 
 spanish.MySQL_Settings_Edit_Port_Text0=3306
 spanish.MySQL_Settings_Edit_Host_Text0=localhost
+spanish.MySQL_Settings_Edit_Databasename_Text0=scadalts
 spanish.MySQL_Settings_Edit_Username_Text0=root
 spanish.MySQL_Settings_Edit_Password_Text0=root
 
@@ -156,8 +164,8 @@ english.Tomcat_Settings_Label_Username_Caption0=Username:
 english.Tomcat_Settings_Label_Password_Caption0=Password:
 english.Tomcat_Settings_Label_TomcatSettings_Caption0=Use the fields below to change Apache Tomcat settings.
 english.Tomcat_Settings_Edit_Port_Text0=8080
-english.Tomcat_Settings_Edit_Username_Text0=tcUser
-english.Tomcat_Settings_Edit_Password_Text0=tcUser
+english.Tomcat_Settings_Edit_Username_Text0=tcadmin
+english.Tomcat_Settings_Edit_Password_Text0=tcadmin
 english.Tomcat_Settings_Caption=Tomcat Settings
 english.Tomcat_Settings_Description=Configure Apache Tomcat used in Scada-LTS
 english.Tomcat_Settings_Invalid_Port=Invalid HTTP Port!
@@ -177,6 +185,7 @@ english.Run_MySQL_Now=Run {#MySQLSeverName} now
 english.MySQL_Settings_Label_Port_Caption0=Port:
 english.MySQL_Settings_Label_InstallLocalServer_Caption0=Install local server:
 english.MySQL_Settings_Label_Host_Caption0=Host:
+english.MySQL_Settings_Label_Databasename_Caption0=Database name:
 english.MySQL_Settings_Label_MySQLUser_Caption0=Create user for {#MySQLSeverName}:
 english.MySQL_Settings_Label_Username_Caption0=Username:
 english.MySQL_Settings_Label_Password_Caption0=Password:
@@ -185,11 +194,13 @@ english.MySQL_Settings_Caption={#MySQLSeverName} Settings
 english.MySQL_Settings_Description=Configure {#MySQLSeverName} used in Scada-LTS
 english.MySQL_Settings_Invalid_Port=Invalid Port!
 english.MySQL_Settings_Invalid_XPort=Invalid XPort!
-english.MySQL_Settings_User_Fields_Missing=The "Username" or "Password" field is empty!
+english.MySQL_Settings_User_Fields_Missing=The "Username" field is empty!
+english.MySQL_Settings_Databasename_Fields_Missing=The "Database name" field is empty!
 english.Configuring_MySQL=Configuring {#MySQLSeverName}...
 
 english.MySQL_Settings_Edit_Port_Text0=3306
 english.MySQL_Settings_Edit_Host_Text0=localhost
+english.MySQL_Settings_Edit_Databasename_Text0=scadalts
 english.MySQL_Settings_Edit_Username_Text0=root
 english.MySQL_Settings_Edit_Password_Text0=root
 
@@ -209,6 +220,7 @@ Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{ap
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\tomcat-users.xml') | Foreach-Object {{$_ -replace '<user-password>', '{code:GetInstallSettings|password}'} | Set-Content '{app}\tomcat\conf\tomcat-users.xml'"" ";  Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-port>', '{code:GetInstallSettings|mysql_port}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-host>', '{code:GetInstallSettings|mysql_host}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
+Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-database>', '{code:GetInstallSettings|mysql_databasename}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-username>', '{code:GetInstallSettings|mysql_username}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\tomcat\conf\context.xml') | Foreach-Object {{$_ -replace '<mysql-password>', '{code:GetInstallSettings|mysql_password}'} | Set-Content '{app}\tomcat\conf\context.xml'"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""([System.Environment]::SetEnvironmentVariable('CATALINA_HOME', $null, 'Machine'))"" "; Flags: runhidden; StatusMsg: "{cm:Configuring_Tomcat}"
@@ -219,7 +231,9 @@ Filename: "{cmd}"; Parameters: "/c install_scadalts.bat install Scada-LTS --rena
 ; MySQL Server
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\mysql\my.ini') | Foreach-Object {{$_ -replace '<mysql-port>', '{code:GetInstallSettings|mysql_port}'} | Set-Content '{app}\mysql\my.ini'"" "; Check: ShouldSetMySQLConfig and ShouldCheckInstallLocalServer; Flags: runhidden; StatusMsg: "{cm:Configuring_MySQL}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\mysql\my_init.bat') | Foreach-Object {{$_ -replace '<mysql-port>', '{code:GetInstallSettings|mysql_port}'} | Set-Content '{app}\mysql\my_init.bat'"" "; Check: ShouldSetMySQLConfig and ShouldCheckInstallLocalServer; Flags: runhidden; StatusMsg: "{cm:Configuring_MySQL}"
+Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\mysql\my_init.bat') | Foreach-Object {{$_ -replace '<mysql-database>', '{code:GetInstallSettings|mysql_databasename}'} | Set-Content '{app}\mysql\my_init.bat'"" "; Check: ShouldSetMySQLConfig and ShouldCheckInstallLocalServer; Flags: runhidden; StatusMsg: "{cm:Configuring_MySQL}"
 
+Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\mysql\scadalts.sql') | Foreach-Object {{$_ -replace '<mysql-database>', '{code:GetInstallSettings|mysql_databasename}'} | Set-Content '{app}\mysql\scadalts.sql'"" "; Check: ShouldCreateMySQLUser and ShouldCheckInstallLocalServer; Flags: runhidden; StatusMsg: "{cm:Configuring_MySQL}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\mysql\scadalts.sql') | Foreach-Object {{$_ -replace '<mysql-username>', '{code:GetInstallSettings|mysql_username}'} | Set-Content '{app}\mysql\scadalts.sql'"" "; Check: ShouldCreateMySQLUser and ShouldCheckInstallLocalServer; Flags: runhidden; StatusMsg: "{cm:Configuring_MySQL}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\mysql\scadalts.sql') | Foreach-Object {{$_ -replace '<mysql-password>', '{code:GetInstallSettings|mysql_password}'} | Set-Content '{app}\mysql\scadalts.sql'"" ";  Check: ShouldCreateMySQLUser and ShouldCheckInstallLocalServer; Flags: runhidden; StatusMsg: "{cm:Configuring_MySQL}"
 Filename: "powershell.exe"; Parameters: "-NoProfile -Command ""(Get-Content '{app}\mysql\scadalts.sql') | Foreach-Object {{$_ -replace '<mysql-host>', '{code:GetInstallSettings|mysql_host}'} | Set-Content '{app}\mysql\scadalts.sql'"" ";  Check: ShouldSetMySQLConfig and ShouldCheckInstallLocalServer; Flags: runhidden; StatusMsg: "{cm:Configuring_MySQL}"
@@ -279,6 +293,7 @@ var
   //MySQL Server
   Label_MySQLPort: TLabel;
   Label_MySQLHost: TLabel;
+  Label_MySQLDatabasename: TLabel;
   Label_MySQLUser: TLabel;
   Label_MySQLUsername: TLabel;
   Label_MySQLPassword: TLabel;
@@ -287,12 +302,14 @@ var
 
   Edit_MySQLPort: TEdit;
   Edit_MySQLHost: TEdit;
+  Edit_MySQLDatabasename: TEdit;
   Edit_MySQLUsername: TEdit;
   Edit_MySQLPassword: TEdit;
   Edit_MySQLInstallLocalServer : TCHeckBox;
 
   MySQL_Port: String;
   MySQL_Host: String;
+  MySQL_Databasename: String;
   MySQL_Username: String;
   MySQL_Password: String;
   MySQL_InstallLocalServer: Boolean;
@@ -318,14 +335,14 @@ end;
 function ShouldCreateMySQLUser(): Boolean;
 begin
   Result := False;
-  if (Trim(MySQL_Username) <> '') and (Trim(MySQL_Password) <> '') then
+  if (Trim(MySQL_Username) <> '') then
     Result := True;
 end;
 
 function ShouldSetMySQLConfig(): Boolean;
 begin
   Result := False;
-  if (StrToIntDef(MySQL_Port, 0) > 0) and (Trim(MySQL_Host) <> '') then
+  if (StrToIntDef(MySQL_Port, 0) > 0) and (Trim(MySQL_Host) <> '') and (Trim(MySQL_Databasename) <> '') then
     Result := True;
 end;
 
@@ -361,6 +378,8 @@ begin
     Result := MySQL_Username
   else if AParam = 'mysql_password' then
     Result := MySQL_Password
+  else if AParam = 'mysql_databasename' then
+    Result := MySQL_Databasename
   else if AParam = 'jre' then
     Result := JRE_Path
   else
@@ -570,12 +589,15 @@ begin
 
   if Port <= 0 then
     MsgBox(ExpandConstant('{cm:MySQL_Settings_Invalid_Port}'), mbError, MB_OK)
-  else if (Trim(Edit_MySQLUsername.Text) <> '') xor (Trim(Edit_MySQLPassword.Text) <> '') then
+  else if (Trim(Edit_MySQLDatabasename.Text) = '') then
+    MsgBox(ExpandConstant('{cm:MySQL_Settings_Databasename_Fields_Missing}'), mbInformation, MB_OK)
+  else if (Trim(Edit_MySQLUsername.Text) = '') then
     MsgBox(ExpandConstant('{cm:MySQL_Settings_User_Fields_Missing}'), mbInformation, MB_OK)
   else
   begin
     MySQL_Port := Trim(Edit_MySQLPort.Text);
     MySQL_Host := Trim(Edit_MySQLHost.Text);
+    MySQL_Databasename := Trim(Edit_MySQLDatabasename.Text);
     MySQL_Username := Trim(Edit_MySQLUsername.Text);
     MySQL_Password := Trim(Edit_MySQLPassword.Text);
     MySQL_InstallLocalServer := Edit_MySQLInstallLocalServer.Checked;
@@ -593,21 +615,6 @@ begin
     ExpandConstant('{cm:MySQL_Settings_Description}')
   );
 
-  // Label_MySQLSettings
-  Label_MySQLSettings := TLabel.Create(Page);
-  with Label_MySQLSettings do
-  begin
-    Parent := Page.Surface;
-    Caption := ExpandConstant('{cm:MySQL_Settings_Label_MySQLSettings_Caption0}');
-    Left := ScaleX(0);
-    Top := ScaleY(16);
-    Width := ScaleX(400);
-    Height := ScaleY(25);
-    Font.Color := -16777208;
-    Font.Height := ScaleY(-11);
-    Font.Name := 'Tahoma';
-  end;
-
   // Label_MySQLInstallLocalServer
   Label_MySQLInstallLocalServer := TLabel.Create(Page);
   with Label_MySQLInstallLocalServer do
@@ -615,7 +622,7 @@ begin
     Parent := Page.Surface;
     Caption := ExpandConstant('{cm:MySQL_Settings_Label_InstallLocalServer_Caption0}');
     Left := ScaleX(0);
-    Top := ScaleY(50);
+    Top := ScaleY(16);
     Width := ScaleX(120);
     Height := ScaleY(13);
     Font.Color := -16777208;
@@ -629,11 +636,36 @@ begin
   begin
     Parent := Page.Surface;
     Left := ScaleX(120);
-    Top := ScaleY(48);
+    Top := ScaleY(14);
     Width := ScaleX(121);
     Height := ScaleY(21);
     TabOrder := 0;
     Checked := False;
+  end;
+
+  // Label_MySQLDatabasename
+  Label_MySQLDatabasename := TLabel.Create(Page);
+  with Label_MySQLDatabasename do
+  begin
+    Parent := Page.Surface;
+    Caption := ExpandConstant('{cm:MySQL_Settings_Label_Databasename_Caption0}');
+    Left := ScaleX(0);
+    Top := ScaleY(50);
+    Width := ScaleX(120);
+    Height := ScaleY(13);
+  end;
+
+  // Edit_MySQLDatabasename
+  Edit_MySQLDatabasename := TEdit.Create(Page);
+  with Edit_MySQLDatabasename do
+  begin
+    Parent := Page.Surface;
+    Left := ScaleX(120);
+    Top := ScaleY(48);
+    Width := ScaleX(121);
+    Height := ScaleY(21);
+    TabOrder := 1;
+    Text := ExpandConstant('{cm:MySQL_Settings_Edit_Databasename_Text0}');
   end;
 
   // Label_MySQLPort
