@@ -1,4 +1,4 @@
-![Scada-LTS logo](https://yt3.ggpht.com/2V_jz6rC-_z3Ir1SL5_TctnE5HAbq_rWbF0PHSfRy3VXdwowrP2XEfTpAcr_VH1TUbzsWjUVWTs=w2120-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj)
+<img src="https://github.com/user-attachments/assets/d06d59a1-0162-4b22-993e-8f9a8d5b638c" width=30% height=30%>
 
 Installer for Scada-LTS developed with Inno Setup.
 
